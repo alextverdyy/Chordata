@@ -1,0 +1,35 @@
+name: Publish demo preview
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - web/**
+      - docs/licenses/**
+      - tools/build_preview.py
+      - .github/workflows/preview.yml
+permissions:
+  contents: read
+concurrency:
+  group: chordata-preview
+  cancel-in-progress: true
+jobs:
+  deploy:
+    if: github.repository == 'alextverdyy/Chordata'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 tools/build_preview.py --output _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment

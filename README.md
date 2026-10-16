@@ -29,6 +29,9 @@ previously returned the wrong frequency; hardware accuracy remains uncalibrated.
 
 ## Preview without a printer
 
+[Open the hosted demo and Trident CAD guide](https://alextverdyy.github.io/Chordata/?demo&guide).
+The hosted build always uses illustrative readings and disables printer commands.
+
 From this checkout:
 
 ```sh
