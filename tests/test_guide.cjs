@@ -47,12 +47,16 @@ const shell=`<!doctype html><meta name="viewport" content="width=device-width,in
     for(const width of [390,1100]){await page.setViewportSize({width,height:1100});await page.screenshot({path:'/tmp/chordata-guide-cad-whole-'+width+'.png',fullPage:true});}
     await page.locator('[data-step="1"]').click();
     assert.match(await page.locator('.cg-text').textContent(),/does not include a toolhead or sensor mount/);
-    const before=await page.locator('canvas').screenshot();
-    await page.locator('canvas').focus();await page.keyboard.press('ArrowRight');
-    assert.notDeepEqual(await page.locator('canvas').screenshot(),before,'Keyboard orbit changes rendered CAD');
+    await page.locator('canvas').scrollIntoViewIfNeeded();
+    await page.locator('canvas').focus();
+    await page.waitForFunction(()=>ChordataGuide.inspect(document.querySelector('#guideApp')).visible);
+    const cameraBefore=await page.evaluate(()=>ChordataGuide.inspect(document.querySelector('#guideApp')));
+    await page.keyboard.press('ArrowRight');
+    await page.waitForFunction(before=>{const now=ChordataGuide.inspect(document.querySelector('#guideApp'));return now.renderCount>before.renderCount&&now.cameraPosition.some((v,i)=>Math.abs(v-before.cameraPosition[i])>1e-6);},cameraBefore);
     await page.keyboard.press('Home');
+    const focused=await page.evaluate(()=>ChordataGuide.inspect(document.querySelector('#guideApp')));
     await page.locator('[data-action=whole]').click();
-    assert.notDeepEqual(await page.locator('canvas').screenshot(),before,'Whole gantry gives context from step focus');
+    await page.waitForFunction(before=>{const now=ChordataGuide.inspect(document.querySelector('#guideApp'));return now.renderCount>before.renderCount&&now.cameraPosition.some((v,i)=>Math.abs(v-before.cameraPosition[i])>1e-6);},focused);
     await page.locator('[data-action=focus]').click();
     assert.equal(await page.locator('input').isDisabled(),true,'No invented sensor animation on bare gantry');
     await page.locator('[data-step="3"]').click();

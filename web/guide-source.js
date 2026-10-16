@@ -64,11 +64,11 @@ function mount(root) {
   <p class="cg-legend">Source: <a href="https://github.com/Monolith3D/Monolith_Gantry/blob/0051697bd2b6c22d557c05ffe8e4b5e43c90490e/CAD/Monolith_Gantry_v604.step" target="_blank" rel="noopener noreferrer">Monolith Gantry by CloakedWayne and contributors</a>, R0/v604, assembly “printed VT 6mm 2WD”. Converted from STEP with the MGN12H X rail; the alternative MGN9H X-rail branch is omitted. No mesh decimation. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. This is the legacy gantry reference; follow your build’s actual measurement span. The guide sends no printer commands.</p>`;
   const canvas=root.querySelector('canvas'),details=root.closest('details'),media=matchMedia('(prefers-reduced-motion: reduce)');
   const slider=root.querySelector('input'),status=root.querySelector('.cg-status span'),loadbar=root.querySelector('progress');
-  const state={step:0,loaded:false,loading:false,contextLost:false,visible:true,playing:false,progress:0,frame:0,last:0,isolate:false,xray:false,meshes:[],roles:{},spans:{},meshCount:0,triangles:0};
+  const state={step:0,loaded:false,loading:false,contextLost:false,visible:true,playing:false,progress:0,frame:0,last:0,isolate:false,xray:false,meshes:[],roles:{},spans:{},meshCount:0,triangles:0,renderCount:0};
   let renderer,scene,camera,controls,model,overlay,modelBounds,animationLine,selected,raycaster;
   const unit=new THREE.Vector3(),center=new THREE.Vector3();
   const store=new Map(),highlight=new Map();
-  viewers.set(root,{inspect:()=>({loaded:state.loaded,loading:state.loading,meshCount:state.meshCount,triangles:state.triangles,roles:Object.fromEntries(Object.entries(state.roles).map(([r,m])=>[r,m.length])),webgl:!!renderer,renderCalls:renderer?.info.render.calls||0,step:state.step,playing:state.playing})});
+  viewers.set(root,{inspect:()=>({loaded:state.loaded,loading:state.loading,meshCount:state.meshCount,triangles:state.triangles,roles:Object.fromEntries(Object.entries(state.roles).map(([r,m])=>[r,m.length])),webgl:!!renderer,renderCalls:renderer?.info.render.calls||0,step:state.step,playing:state.playing,visible:available(),renderCount:state.renderCount,cameraPosition:camera?.position.toArray()})});
   function busy(text,active=false){status.textContent=text;root.querySelector('.cg-status').setAttribute('aria-busy',String(active));}
   function available(){return !state.contextLost&&state.visible&&!document.hidden&&(!details||details.open);}
   function normalizedRole(role){
@@ -94,7 +94,7 @@ function mount(root) {
     const box=new THREE.Box3();for(const mesh of state.roles[role]||[])box.expandByObject(mesh);
     return box.isEmpty()?modelBounds.clone():box;
   }
-  function render(){if(renderer&&scene&&camera&&available()){renderer.render(scene,camera);}}
+  function render(){if(renderer&&scene&&camera&&available()){renderer.render(scene,camera);state.renderCount++;}}
   function theme(){if(!scene)return;scene.background=new THREE.Color(getComputedStyle(root).getPropertyValue('--bg').trim()||'#121212');render();}
   function resize(){
     if(!renderer)return;const w=canvas.clientWidth||640,h=canvas.clientHeight||480;
