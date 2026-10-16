@@ -78,7 +78,7 @@ class ComponentTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(all(route['auth_required'] for route in protected))
         self.assertTrue(any(name.startswith('/access/') for name in self.server.routes))
     async def test_static_feature_routes_are_public_and_fixed(self):
-        self.assertEqual(set(self.component.assets), {'/server/chordata/guide.js', '/server/chordata/spectrum.js', '/server/chordata/trident.glb'})
+        self.assertEqual(set(self.component.assets), {'/server/chordata/guide.js', '/server/chordata/spectrum.js', '/server/chordata/monolith-gantry.glb'})
         for route in self.component.assets:
             self.assertFalse(self.server.routes[route]['auth_required'])
         self.assertNotIn('/server/chordata/settings.json', self.component.assets)

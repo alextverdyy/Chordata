@@ -247,7 +247,7 @@ duration is 0.5–30 seconds. The CSV contains time and X/Y/Z acceleration sampl
 
 The [sensor spectrum reference](MEASUREMENT_RELIABILITY.md#read-the-sensor-spectrum)
 explains the live response, F/2F markers, freeze and export controls. The
-[Voron Trident guide](TRIDENT_GUIDE.md) explains the interactive 3D model and its
+[Monolith Trident gantry guide](TRIDENT_GUIDE.md) explains the interactive 3D model and its
 instructional limits. Add `&guide` to the offline demo URL to open the guide.
 
 ## 7. Enable optional Laya or Jev review

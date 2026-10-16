@@ -2,11 +2,11 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-const assetURL = new URL('trident.glb', document.currentScript?.src || location.href).href;
+const assetURL = new URL('monolith-gantry.glb', document.currentScript?.src || location.href).href;
 const viewers = new WeakMap();
   const steps = [
-    {title:'Set the reference', short:'Reference', focus:'Free span', text:'Use your printer manufacturer’s belt span, toolhead position and target frequency. Measure both belts at equivalent spans and the same toolhead position. The viewer uses the official Voron Trident CAD assembly. Select a source mesh group to inspect it; use your own build’s documented span and target for measurement.', check:'Before measuring: printer idle, toolhead in the prescribed position, span and target confirmed.'},
-    {title:'Secure the sensor', short:'Sensor', focus:'Sensor + rigid mount', text:'Attach the accelerometer rigidly to the toolhead using the recommended mount. Tighten the mounting screws and keep the cable clear of the belt and frame. A loose mount can resonate and change the result. The green sensor and its exploded screws are an instructional overlay, not parts of the original CAD. Your mount may differ.', check:'Check: the sensor cannot rock, and the cable cannot rub or pull on the mount.'},
+    {title:'Set the reference', short:'Reference', focus:'Free span', text:'Use your printer manufacturer’s belt span, toolhead position and target frequency. Measure both belts at equivalent spans and the same toolhead position. The viewer uses the Monolith R0 Trident 6 mm 2WD gantry from the source CAD. Select a source part to inspect it; use your own build’s documented span and target for measurement.', check:'Before measuring: printer idle, toolhead in the prescribed position, span and target confirmed.'},
+    {title:'Secure the sensor', short:'Sensor', focus:'Sensor + rigid mount', text:'Attach the accelerometer rigidly to the toolhead using the recommended mount. Tighten the mounting screws and keep the cable clear of the belt and frame. A loose mount can resonate and change the result. This bare gantry CAD does not include a toolhead or sensor mount. Use the mounting instructions for your actual toolhead.', check:'Check: the sensor cannot rock, and the cable cannot rub or pull on the mount.'},
     {title:'Check the recording', short:'Quiet + tap', focus:'Toolhead tap', text:'Start the belt workflow. Stay still during the quiet baseline, then follow its prompt for one light tap on the toolhead. Chordata uses the tap to learn toolhead ringing and help reject knocks during measurement. It is not a belt measurement. Wait for the listening prompt before plucking.', check:'If the tap is not detected, inspect the sensor and connection before continuing.'},
     {title:'Pluck belt A', short:'Belt A', focus:'A · free span', text:'Pluck the middle of the prescribed free span sideways with a small, consistent movement. Release cleanly without touching the neighboring belt. Let it ring down before the next pluck. Follow the on-screen prompts and collect several accepted readings.', check:'The animation is slowed down. Chordata compares the fundamental (F), second harmonic (2F) and signal decay automatically. The highest spectrum peak alone may not be the fundamental; inspect accepted readings and quality before adjusting a belt.'},
     {title:'Repeat on belt B', short:'Belt B', focus:'B · equivalent span', text:'Record belt B using the same span length, toolhead position, pluck direction and strength. Do not move the toolhead or change the sensor mount between belts. Small differences are useful only when each belt’s repeated readings agree.', check:'Check the accepted count, spread, signal quality and rejected readings for both belts.'},
@@ -47,25 +47,25 @@ const viewers = new WeakMap();
   .cg button[aria-pressed=true] { background:var(--primary-soft); border-color:var(--primary); }
   `;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-const ROLE_COLORS={belt_a:0x399df4,belt_b:0xe6b344,toolhead:0xe14c41,tensioner:0xda8c34,sensor:0x40bb8a};
+const ROLE_COLORS={belt_a:0x399df4,belt_b:0xe6b344,x_axis:0x399df4,tensioner:0xda8c34};
 function mount(root) {
   if(!root||root.dataset.guideMounted)return;
   root.dataset.guideMounted='true';root.classList.add('cg');
   if(!document.getElementById('chordataGuideStyle')){const style=document.createElement('style');style.id='chordataGuideStyle';style.textContent=css+extraCSS;document.head.append(style);}
   root.innerHTML=`<nav class="cg-steps" aria-label="Measurement guide steps">${steps.map((s,i)=>`<button type="button" data-step="${i}">${i+1}. ${s.short}</button>`).join('')}</nav>
-  <div class="cg-stage"><span class="cg-badge">Voron Trident · official CAD assembly</span><canvas tabindex="0" role="img" aria-label="3D CAD viewer. Drag to orbit, arrow keys rotate, plus or minus zoom, Home focuses the current step."></canvas><span class="cg-label" hidden></span><div class="cg-status" role="status" aria-live="polite" aria-busy="false"><span>Open the guide to load the CAD assembly.</span><progress class="cg-loadbar" max="1"></progress></div></div>
+  <div class="cg-stage"><span class="cg-badge">Monolith R0 · Trident 6 mm 2WD gantry</span><canvas tabindex="0" role="img" aria-label="3D CAD viewer. Drag to orbit, arrow keys rotate, plus or minus zoom, Home focuses the current step."></canvas><span class="cg-label" hidden></span><div class="cg-status" role="status" aria-live="polite" aria-busy="false"><span>Open the guide to load the CAD assembly.</span><progress class="cg-loadbar" max="1"></progress></div></div>
   <p class="cg-fallback" hidden>The 3D view is unavailable. The written guide below remains available. Try a browser with WebGL 2 enabled.</p>
-  <p class="cg-legend">Drag to orbit · scroll or pinch to zoom · arrow keys rotate the focused viewer · Home focuses the step. Blue: belt A; amber: belt B. The green sensor and pluck motion are teaching overlays.</p>
-  <div class="cg-toolbar"><button type="button" data-action="retry" hidden>Retry CAD loading</button><button type="button" data-action="focus">Focus step</button><button type="button" data-action="whole">Whole printer</button><button type="button" data-action="isolate" aria-pressed="false">Isolate step parts</button><button type="button" data-action="xray" aria-pressed="false">See through frame</button><button type="button" data-action="out" aria-label="Zoom out">Zoom −</button><button type="button" data-action="in" aria-label="Zoom in">Zoom +</button></div>
-  <p class="cg-selection">Select the CAD to identify a mesh group. Source parts are grouped by role and material.</p>
+  <p class="cg-legend">Drag to orbit · scroll or pinch to zoom · arrow keys rotate the focused viewer · Home focuses the step. Blue: upper belt A; amber: lower belt B. Pluck motion is a slowed teaching overlay. The CAD has no toolhead or sensor.</p>
+  <div class="cg-toolbar"><button type="button" data-action="retry" hidden>Retry CAD loading</button><button type="button" data-action="focus">Focus step</button><button type="button" data-action="whole">Whole gantry</button><button type="button" data-action="isolate" aria-pressed="false">Isolate step parts</button><button type="button" data-action="xray" aria-pressed="false">See through frame</button><button type="button" data-action="out" aria-label="Zoom out">Zoom −</button><button type="button" data-action="in" aria-label="Zoom in">Zoom +</button></div>
+  <p class="cg-selection">Select the CAD to identify a source part. Source part names and relative positions are retained.</p>
   <div class="cg-toolbar cg-animation"><button type="button" data-action="play" aria-pressed="false">Play illustration</button><label>Illustration <input type="range" min="0" max="1000" value="0" aria-label="Animation progress"></label></div>
   <div class="cg-copy" aria-live="polite" aria-atomic="true"><h3></h3><p class="cg-text"></p><p class="cg-check"></p></div><p class="cg-motion" hidden>Reduced motion is enabled. Use the Illustration slider to inspect the movement.</p>
   <div class="cg-nav"><button type="button" data-action="previous">Previous step</button><button type="button" data-action="next">Next step</button></div>
-  <p class="cg-legend">Grouped source geometry from the <a href="https://github.com/VoronDesign/Voron-Trident" target="_blank" rel="noopener noreferrer">official Voron Trident design</a> (GPL-3.0), tessellated for this viewer. Enclosure panels and most fasteners are omitted for visibility and size. <a href="https://github.com/VoronDesign/Voron-Trident/blob/main/Manual/Assembly_Manual_Trident.pdf" target="_blank" rel="noopener noreferrer">Assembly manual</a>. CAD is a reference for that revision; mounts, belt spans and tensioners may differ on your printer. No printer commands are sent by this guide.</p>`;
+  <p class="cg-legend">Source: <a href="https://github.com/Monolith3D/Monolith_Gantry/blob/0051697bd2b6c22d557c05ffe8e4b5e43c90490e/CAD/Monolith_Gantry_v604.step" target="_blank" rel="noopener noreferrer">Monolith Gantry by CloakedWayne and contributors</a>, R0/v604, assembly “printed VT 6mm 2WD”. Converted from STEP with the MGN12H X rail; the alternative MGN9H X-rail branch is omitted. No mesh decimation. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. This is the legacy gantry reference; follow your build’s actual measurement span. The guide sends no printer commands.</p>`;
   const canvas=root.querySelector('canvas'),details=root.closest('details'),media=matchMedia('(prefers-reduced-motion: reduce)');
   const slider=root.querySelector('input'),status=root.querySelector('.cg-status span'),loadbar=root.querySelector('progress');
   const state={step:0,loaded:false,loading:false,contextLost:false,visible:true,playing:false,progress:0,frame:0,last:0,isolate:false,xray:false,meshes:[],roles:{},spans:{},meshCount:0,triangles:0};
-  let renderer,scene,camera,controls,model,overlay,modelBounds,animationLine,sensor,selected,raycaster;
+  let renderer,scene,camera,controls,model,overlay,modelBounds,animationLine,selected,raycaster;
   const unit=new THREE.Vector3(),center=new THREE.Vector3();
   const store=new Map(),highlight=new Map();
   viewers.set(root,{inspect:()=>({loaded:state.loaded,loading:state.loading,meshCount:state.meshCount,triangles:state.triangles,roles:Object.fromEntries(Object.entries(state.roles).map(([r,m])=>[r,m.length])),webgl:!!renderer,renderCalls:renderer?.info.render.calls||0,step:state.step,playing:state.playing})});
@@ -89,7 +89,7 @@ function mount(root) {
     if(/frame|extrusion|2020/i.test(name))return 'frame';
     return 'other';
   }
-  function activeRole(){return ['all','toolhead','toolhead','belt_a','belt_b','tensioner'][state.step];}
+  function activeRole(){return ['all','x_axis','x_axis','belt_a','belt_b','tensioner'][state.step];}
   function boundsFor(role){
     const box=new THREE.Box3();for(const mesh of state.roles[role]||[])box.expandByObject(mesh);
     return box.isEmpty()?modelBounds.clone():box;
@@ -105,7 +105,6 @@ function mount(root) {
   }
   function focus(whole=false){
     if(!state.loaded)return;const box=whole||state.step===0?modelBounds:boundsFor(activeRole());
-    if(!whole&&state.step===1&&sensor){box.expandByObject(sensor);box.max.y+=sensor.userData.size;}
     box.getCenter(center);box.getSize(unit);
     const fullSize=modelBounds.getSize(new THREE.Vector3()).length();
     const minimum=whole?fullSize*.4:fullSize*.11;
@@ -135,24 +134,13 @@ function mount(root) {
         mesh.material=highlight.get(role);
       }else mesh.material=state.xray&&(role!=='all'||['frame','hardware'].includes(mesh.userData.role))?materialFor(mesh,'xray'):mesh.userData.originalMaterial;
     }
-    if(overlay)overlay.visible=[1,2,3,4].includes(state.step);
+    if(overlay)overlay.visible=[3,4].includes(state.step);
     updateIllustration();render();
   }
   function makeOverlays(){
     overlay=new THREE.Group();overlay.name='Instructional overlays (not original CAD)';scene.add(overlay);
-    const box=boundsFor('toolhead');box.getCenter(center);box.getSize(unit);
-    const total=modelBounds.getSize(new THREE.Vector3()).length();
-    const s=Math.max(unit.x,total*.055);
-    sensor=new THREE.Group();sensor.name='Sensor mount illustration';sensor.position.set(center.x,box.max.y+s*.1,center.z);overlay.add(sensor);
-    function block(size,color,position){const m=new THREE.Mesh(new THREE.BoxGeometry(...size),new THREE.MeshStandardMaterial({color,roughness:.55}));m.position.set(...position);sensor.add(m);return m;}
-    block([s*.6,s*.08,s*.4],0x657589,[0,0,0]);
-    const board=block([s*.48,s*.05,s*.32],0x3aaa79,[0,s*.12,0]);board.userData.level=1;
-    block([s*.16,s*.06,s*.12],0x243f35,[0,s*.17,0]).userData.level=1;
-    for(const x of [-1,1])for(const z of [-1,1])block([s*.035,s*.13,s*.035],0xd6e1eb,[x*s*.17,s*.23,z*s*.1]).userData.level=1.6;
-    sensor.userData.size=s;
     const positions=new Float32Array(65*3),geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(positions,3));
     animationLine=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0x55b6ff,depthTest:false,transparent:true,opacity:.95}));animationLine.renderOrder=10;overlay.add(animationLine);
-    for(const child of sensor.children)child.userData.baseY=child.position.y;
   }
   function findStraightSpan(role){
     // Select an actual long, horizontal CAD triangle edge. This is an animation
@@ -172,13 +160,12 @@ function mount(root) {
     return best;
   }
   function updateIllustration(){
-    if(!overlay)return;const label=root.querySelector('.cg-label');label.hidden=![1,2,3,4].includes(state.step);
-    sensor.visible=state.step===1||state.step===2;animationLine.visible=state.step===3||state.step===4;
-    label.textContent=state.step===1?'Green sensor + screws: teaching overlay':state.step===2?'Calibrate with a light toolhead tap':'Slowed motion overlay · confirm the free span for your build';
-    if(sensor.visible)for(const child of sensor.children)child.position.y=child.userData.baseY+(state.step===1?(child.userData.level||0)*sensor.userData.size*.55*(.5-.5*Math.cos(state.progress*Math.PI*2)):0);
+    if(!overlay)return;const label=root.querySelector('.cg-label');label.hidden=![3,4].includes(state.step);
+    animationLine.visible=state.step===3||state.step===4;
+    label.textContent='Slowed motion overlay · confirm the free span for your build';
     if(animationLine.visible){
       const span=state.spans[activeRole()];
-      if(!span){animationLine.visible=false;label.textContent='Actual CAD belt highlighted · use the documented free span';return;}
+      if(!span){animationLine.visible=false;label.textContent='Source CAD belt highlighted · use the documented free span';return;}
       const delta=span.b.clone().sub(span.a),axis=Math.abs(delta.x)>Math.abs(delta.z)?'x':'z',length=span.length;
       const positions=animationLine.geometry.attributes.position;
       for(let i=0;i<65;i++){const t=i/64,p=span.a.clone().lerp(span.b,t);p.y+=length*.006;const transverse=Math.sin(t*Math.PI)*Math.sin(state.progress*Math.PI*10)*Math.exp(-state.progress*3.8)*length*.05;p[axis==='x'?'z':'x']+=transverse;positions.setXYZ(i,p.x,p.y,p.z);}
@@ -188,7 +175,7 @@ function mount(root) {
   function tick(time){state.frame=0;if(!state.playing||!available()||media.matches||!state.loaded)return;if(state.last&&time-state.last<32){state.frame=requestAnimationFrame(tick);return;}const dt=state.last?Math.min(time-state.last,100):0;state.last=time;state.progress=(state.progress+dt/4200)%1;slider.value=Math.round(state.progress*1000);updateIllustration();render();state.frame=requestAnimationFrame(tick);}
   function motion(){
     cancelAnimationFrame(state.frame);state.frame=0;state.last=0;
-    const animate=state.loaded&&!state.contextLost&&[1,3,4].includes(state.step);const button=root.querySelector('[data-action=play]');button.disabled=!animate||media.matches;button.textContent=state.playing?'Pause illustration':'Play illustration';button.setAttribute('aria-pressed',String(state.playing));slider.disabled=!animate;root.querySelector('.cg-motion').hidden=!media.matches;
+    const animate=state.loaded&&!state.contextLost&&[3,4].includes(state.step);const button=root.querySelector('[data-action=play]');button.disabled=!animate||media.matches;button.textContent=state.playing?'Pause illustration':'Play illustration';button.setAttribute('aria-pressed',String(state.playing));slider.disabled=!animate;root.querySelector('.cg-motion').hidden=!media.matches;
     for(const action of ['focus','whole','isolate','xray','in','out'])root.querySelector(`[data-action=${action}]`).disabled=!state.loaded||state.contextLost;
     if(animate&&state.playing&&available()&&!media.matches)state.frame=requestAnimationFrame(tick);
   }
@@ -206,7 +193,7 @@ function mount(root) {
     }catch(error){renderer=null;canvas.hidden=true;root.querySelector('.cg-stage').style.minHeight='100px';busy('WebGL 2 is unavailable. Use the written instructions below.');root.querySelector('.cg-fallback').hidden=false;root.querySelector('[data-action=retry]').hidden=true;return false;}
   }
   async function load(){
-    if(state.loading||state.loaded||!available())return;canvas.hidden=false;root.querySelector('.cg-stage').style.minHeight='';if(!setupRenderer())return;resize();state.loading=true;root.querySelector('[data-action=retry]').hidden=true;busy('Loading official Trident CAD…',true);loadbar.removeAttribute('value');
+    if(state.loading||state.loaded||!available())return;canvas.hidden=false;root.querySelector('.cg-stage').style.minHeight='';if(!setupRenderer())return;resize();state.loading=true;root.querySelector('[data-action=retry]').hidden=true;busy('Loading Monolith Trident gantry…',true);loadbar.removeAttribute('value');
     try {
       const gltf=await new GLTFLoader().loadAsync(assetURL,event=>{if(event.total>0){loadbar.value=event.loaded/event.total;busy(`Loading CAD · ${Math.round(event.loaded/event.total*100)}%`,true);}});
       model=gltf.scene;scene.add(model);model.updateMatrixWorld(true);state.meshes=[];state.roles={};state.triangles=0;
@@ -214,14 +201,14 @@ function mount(root) {
       if(!state.meshes.length)throw new Error('No CAD mesh geometry found');
       modelBounds=new THREE.Box3().setFromObject(model);if(modelBounds.isEmpty())throw new Error('Empty CAD assembly');
       state.spans={belt_a:findStraightSpan('belt_a'),belt_b:findStraightSpan('belt_b')};
-      state.meshCount=state.meshes.length;state.loaded=true;state.loading=false;root.dataset.cadLoaded='true';root.querySelector('.cg-fallback').hidden=true;busy(`${state.meshCount.toLocaleString()} CAD mesh groups · ${Math.round(state.triangles).toLocaleString()} triangles`);makeOverlays();appearance();focus();motion();resize();
+      state.meshCount=state.meshes.length;state.loaded=true;state.loading=false;root.dataset.cadLoaded='true';root.querySelector('.cg-fallback').hidden=true;busy(`${state.meshCount.toLocaleString()} CAD parts · ${Math.round(state.triangles).toLocaleString()} triangles`);makeOverlays();appearance();focus();motion();resize();
     }catch(error){state.loading=false;canvas.hidden=true;root.querySelector('.cg-stage').style.minHeight='100px';busy('CAD loading failed. Check the connection, then retry.');root.querySelector('[data-action=retry]').hidden=false;const fallback=root.querySelector('.cg-fallback');fallback.textContent='The CAD assembly could not be loaded. The written instructions remain available. Check the connection, then use Retry CAD loading.';fallback.hidden=false;}
   }
   function zoom(factor){if(!controls)return;camera.position.sub(controls.target).multiplyScalar(factor).add(controls.target);controls.update();render();}
   root.addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;if(b.hasAttribute('data-step')){select(Number(b.dataset.step));return;}switch(b.dataset.action){case 'previous':select(state.step-1);break;case 'next':select(state.step+1);break;case 'retry':load();break;case 'focus':focus();break;case 'whole':focus(true);break;case 'isolate':state.isolate=!state.isolate;b.setAttribute('aria-pressed',String(state.isolate));appearance();break;case 'xray':state.xray=!state.xray;b.setAttribute('aria-pressed',String(state.xray));appearance();break;case 'in':zoom(.85);break;case 'out':zoom(1.15);break;case 'play':state.playing=!state.playing;motion();break;}});
   slider.addEventListener('input',()=>{state.playing=false;state.progress=Number(slider.value)/1000;motion();updateIllustration();render();});
   canvas.addEventListener('keydown',event=>{if(!state.loaded)return;const offset=camera.position.clone().sub(controls.target),s=new THREE.Spherical().setFromVector3(offset);switch(event.key){case 'ArrowLeft':s.theta-=.12;break;case 'ArrowRight':s.theta+=.12;break;case 'ArrowUp':s.phi=clamp(s.phi-.1,.08,Math.PI-.08);break;case 'ArrowDown':s.phi=clamp(s.phi+.1,.08,Math.PI-.08);break;case '+':case '=':event.preventDefault();zoom(.9);return;case '-':event.preventDefault();zoom(1.1);return;case 'Home':event.preventDefault();focus();return;default:return;}event.preventDefault();camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(s));controls.update();render();});
-  let down=null;canvas.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];});canvas.addEventListener('pointerup',e=>{if(!state.loaded||!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const r=canvas.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1),camera);const hit=raycaster.intersectObjects(state.meshes,false).find(h=>h.object.visible);if(hit){selected=hit.object;root.querySelector('.cg-selection').textContent=`CAD mesh group: ${selected.name||selected.parent?.name||'unnamed group'} · ${selected.userData.role.replaceAll('_',' ')}`;}});
+  let down=null;canvas.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];});canvas.addEventListener('pointerup',e=>{if(!state.loaded||!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const r=canvas.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1),camera);const hit=raycaster.intersectObjects(state.meshes,false).find(h=>h.object.visible);if(hit){selected=hit.object;root.querySelector('.cg-selection').textContent=`CAD part: ${selected.userData.source_part||selected.name||'unnamed part'} · ${selected.userData.role.replaceAll('_',' ')}`;}});
   if(window.ResizeObserver)new ResizeObserver(resize).observe(canvas);else window.addEventListener('resize',resize);
   if(window.IntersectionObserver)new IntersectionObserver(entries=>{state.visible=entries[0].isIntersecting;motion();if(available()){load();render();}}).observe(canvas);
   new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});

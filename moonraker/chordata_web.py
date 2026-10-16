@@ -162,7 +162,7 @@ class ChordataWeb:
                                       transports=TransportType.HTTP, wrap_result=False,
                                       content_type="text/html; charset=UTF-8", auth_required=False)
         self.assets = {"/server/chordata/" + name: PAGE.parent / name
-                       for name in ("guide.js", "spectrum.js", "trident.glb")}
+                       for name in ("guide.js", "spectrum.js", "monolith-gantry.glb")}
         for endpoint in self.assets:
             self.server.register_endpoint(endpoint, RequestType.GET, self._handle_asset,
                 transports=TransportType.HTTP, wrap_result=False,

@@ -1,0 +1,4334 @@
+{
+  "source_repository": "https://github.com/Monolith3D/Monolith_Gantry",
+  "source_revision": "0051697bd2b6c22d557c05ffe8e4b5e43c90490e",
+  "source_path": "CAD/Monolith_Gantry_v604.step",
+  "source_url": "https://raw.githubusercontent.com/Monolith3D/Monolith_Gantry/0051697bd2b6c22d557c05ffe8e4b5e43c90490e/CAD/Monolith_Gantry_v604.step",
+  "source_step_sha256": "faab4005da2226e900297e4aa4ed0dab7faf9c259ddeaf20d9db1d5098e6c1ab",
+  "source_step_bytes": 60201059,
+  "source_assembly": "printed VT 6mm 2WD",
+  "source_release": "R0 / v604",
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "Monolith Gantry by CloakedWayne and Monolith contributors",
+  "asset": "monolith-gantry.glb",
+  "asset_sha256": "1f7961eed6e750b7d6e8754eb2c294e5d8ec6a050aea5a8217f522943d611927",
+  "asset_bytes": 9238092,
+  "units": "metres",
+  "up_axis": "Y",
+  "source_units": "millimetres",
+  "source_up_axis": "Z",
+  "source_to_asset": {
+    "axis_mapping": "[x, z, -y] / 1000",
+    "recenter_translation_m": [
+      -0.5,
+      -2.6818824938601438e-15,
+      -0.04264999999999884
+    ]
+  },
+  "source_bounds_m": [
+    [
+      0.29499999999998056,
+      -0.062000000000003164,
+      -0.16370000000000237
+    ],
+    [
+      0.7050000000000194,
+      0.06200000000000853,
+      0.24900000000000005
+    ]
+  ],
+  "bounds_m": [
+    [
+      -0.20500000000001944,
+      -0.06200000000000584,
+      -0.2063500000000012
+    ],
+    [
+      0.2050000000000194,
+      0.06200000000000584,
+      0.2063500000000012
+    ]
+  ],
+  "triangles": 558142,
+  "meshes": 236,
+  "parts": [
+    {
+      "name": "000_2020 Drop-in T-nut, M3",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M3",
+      "triangles": 742,
+      "bounds_m": [
+        [
+          0.10749999999999893,
+          -0.0038498783447695364,
+          -0.19194999999999918
+        ],
+        [
+          0.11999999999999944,
+          0.0038498783447667917,
+          -0.18764999999999799
+        ]
+      ]
+    },
+    {
+      "name": "001_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.10594999999998322,
+          0.004299999999986895,
+          -0.20009987834476783
+        ],
+        [
+          0.11894999999999412,
+          0.008600000000019564,
+          -0.19240012165523068
+        ]
+      ]
+    },
+    {
+      "name": "002_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.10595000000000088,
+          -0.008600000000013154,
+          -0.2000998783447669
+        ],
+        [
+          0.11895000000001188,
+          -0.004299999999980454,
+          -0.1924001216552298
+        ]
+      ]
+    },
+    {
+      "name": "003_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.08995000000000086,
+          -0.008599999999973061,
+          -0.2000998783447654
+        ],
+        [
+          0.10295000000001187,
+          -0.004299999999940242,
+          -0.1924001216552283
+        ]
+      ]
+    },
+    {
+      "name": "004_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.08994999999998321,
+          0.004300000000027098,
+          -0.20009987834476667
+        ],
+        [
+          0.1029499999999941,
+          0.008600000000059924,
+          -0.19240012165522957
+        ]
+      ]
+    },
+    {
+      "name": "005_2020 Drop-in T-nut, M3",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M3",
+      "triangles": 742,
+      "bounds_m": [
+        [
+          -0.11999999999999938,
+          -0.0038498783447719056,
+          -0.19194999999999907
+        ],
+        [
+          -0.10749999999999887,
+          0.0038498783447644207,
+          -0.18764999999999793
+        ]
+      ]
+    },
+    {
+      "name": "006_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.11894999999999423,
+          -0.008600000000024678,
+          -0.20009987834476783
+        ],
+        [
+          -0.10594999999998322,
+          -0.004299999999992012,
+          -0.19240012165523068
+        ]
+      ]
+    },
+    {
+      "name": "007_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.11895000000001199,
+          0.004299999999975342,
+          -0.20009987834476678
+        ],
+        [
+          -0.10595000000000088,
+          0.008600000000008037,
+          -0.19240012165522968
+        ]
+      ]
+    },
+    {
+      "name": "008_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.10295000000001192,
+          0.004299999999935127,
+          -0.2000998783447655
+        ],
+        [
+          -0.08995000000000081,
+          0.008599999999967944,
+          -0.19240012165522835
+        ]
+      ]
+    },
+    {
+      "name": "009_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.10294999999999416,
+          -0.008600000000065031,
+          -0.20009987834476672
+        ],
+        [
+          -0.08994999999998321,
+          -0.004300000000032202,
+          -0.19240012165522963
+        ]
+      ]
+    },
+    {
+      "name": "010_SOLID",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-240/SOLID",
+      "triangles": 568,
+      "bounds_m": [
+        [
+          -0.12000000000000144,
+          -0.010000000000002106,
+          -0.20624999999999793
+        ],
+        [
+          0.119999999999999,
+          0.00999999999999797,
+          -0.18624999999999786
+        ]
+      ]
+    },
+    {
+      "name": "011_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.17900000000001304,
+          -0.002742310442232526,
+          -0.14039999999999472
+        ],
+        [
+          0.19000000000001382,
+          0.002742310442264053,
+          -0.13489999999999425
+        ]
+      ]
+    },
+    {
+      "name": "012_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1790000000000126,
+          -0.0027423104422325375,
+          -0.10039999999999472
+        ],
+        [
+          0.19000000000001327,
+          0.002742310442264042,
+          -0.09489999999999424
+        ]
+      ]
+    },
+    {
+      "name": "013_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1790000000000127,
+          -0.0027423104422325483,
+          -0.06039999999999472
+        ],
+        [
+          0.19000000000001338,
+          0.002742310442264031,
+          -0.05489999999999424
+        ]
+      ]
+    },
+    {
+      "name": "014_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.17900000000001304,
+          -0.002742310442232562,
+          -0.02039999999999472
+        ],
+        [
+          0.19000000000001382,
+          0.0027423104422640175,
+          -0.014899999999994237
+        ]
+      ]
+    },
+    {
+      "name": "015_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1790000000000126,
+          -0.0027423104422325726,
+          0.01960000000000575
+        ],
+        [
+          0.19000000000001327,
+          0.0027423104422640066,
+          0.025100000000006242
+        ]
+      ]
+    },
+    {
+      "name": "016_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1790000000000127,
+          -0.0027423104422325817,
+          0.059600000000005746
+        ],
+        [
+          0.19000000000001338,
+          0.002742310442263998,
+          0.06510000000000625
+        ]
+      ]
+    },
+    {
+      "name": "017_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1790000000000127,
+          -0.0027423104422325904,
+          0.09960000000000598
+        ],
+        [
+          0.19000000000001338,
+          0.002742310442263989,
+          0.10510000000000645
+        ]
+      ]
+    },
+    {
+      "name": "018_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1790000000000126,
+          -0.0027423104422326016,
+          0.13960000000000605
+        ],
+        [
+          0.19000000000001327,
+          0.0027423104422639776,
+          0.14510000000000656
+        ]
+      ]
+    },
+    {
+      "name": "019_SOLID",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/SOLID",
+      "triangles": 7816,
+      "bounds_m": [
+        [
+          0.17849999999997723,
+          -0.004500000000000773,
+          -0.1476499999999939
+        ],
+        [
+          0.18500000000004568,
+          0.004500000000042941,
+          0.15235000000000742
+        ]
+      ]
+    },
+    {
+      "name": "020_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.18639770369088204,
+          -0.0038498783450838414,
+          -0.16284999999999783
+        ],
+        [
+          0.19069770369089178,
+          0.0038498783444531706,
+          -0.1498499999999972
+        ]
+      ]
+    },
+    {
+      "name": "021_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.1911501216552356,
+          0.0042999999996271195,
+          0.15254999999999103
+        ],
+        [
+          0.1988498783447722,
+          0.008599999999636537,
+          0.16554999999999137
+        ]
+      ]
+    },
+    {
+      "name": "022_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.19115012165523637,
+          0.004299999999626978,
+          0.16954999999999
+        ],
+        [
+          0.19884987834477297,
+          0.008599999999636359,
+          0.18254999999999033
+        ]
+      ]
+    },
+    {
+      "name": "023_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.1911501216551389,
+          -0.008600000000319822,
+          -0.177850000000004
+        ],
+        [
+          0.19884987834467538,
+          -0.004300000000310398,
+          -0.1648500000000037
+        ]
+      ]
+    },
+    {
+      "name": "024_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.1911501216552488,
+          -0.00860000000037478,
+          0.16954999999999
+        ],
+        [
+          0.1988498783447854,
+          -0.004300000000365418,
+          0.1825499999999904
+        ]
+      ]
+    },
+    {
+      "name": "025_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.19115012165522438,
+          0.004299999999681533,
+          -0.16085000000000305
+        ],
+        [
+          0.19884987834476076,
+          0.008599999999690907,
+          -0.14785000000000276
+        ]
+      ]
+    },
+    {
+      "name": "026_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.19115012165522394,
+          0.004299999999681928,
+          -0.17785000000000306
+        ],
+        [
+          0.19884987834476042,
+          0.008599999999691334,
+          -0.16485000000000277
+        ]
+      ]
+    },
+    {
+      "name": "027_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.19115012165524814,
+          -0.008600000000374768,
+          0.15254999999999003
+        ],
+        [
+          0.19884987834478474,
+          -0.0043000000003653675,
+          0.16554999999999043
+        ]
+      ]
+    },
+    {
+      "name": "028_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.18640000000000467,
+          -0.003849878345144287,
+          0.1545499999999897
+        ],
+        [
+          0.1907000000000144,
+          0.0038498783443946514,
+          0.16754999999999137
+        ]
+      ]
+    },
+    {
+      "name": "029_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.19115012165513934,
+          -0.00860000000032035,
+          -0.160850000000003
+        ],
+        [
+          0.19884987834467582,
+          -0.0043000000003109605,
+          -0.1478500000000027
+        ]
+      ]
+    },
+    {
+      "name": "030_SOLID",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/SOLID",
+      "triangles": 568,
+      "bounds_m": [
+        [
+          0.18500000000000205,
+          -0.010000000000002297,
+          -0.18264999999999332
+        ],
+        [
+          0.2050000000000194,
+          0.009999999999997775,
+          0.18735000000000757
+        ]
+      ]
+    },
+    {
+      "name": "031_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001388,
+          -0.0027423104422692078,
+          -0.14039999999999472
+        ],
+        [
+          -0.17900000000001315,
+          0.0027423104422273714,
+          -0.13489999999999425
+        ]
+      ]
+    },
+    {
+      "name": "032_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001377,
+          -0.002742310442269221,
+          -0.10039999999999472
+        ],
+        [
+          -0.1790000000000131,
+          0.002742310442227358,
+          -0.09489999999999424
+        ]
+      ]
+    },
+    {
+      "name": "033_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001382,
+          -0.00274231044226923,
+          -0.06039999999999372
+        ],
+        [
+          -0.17900000000001315,
+          0.0027423104422273493,
+          -0.054899999999993246
+        ]
+      ]
+    },
+    {
+      "name": "034_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001377,
+          -0.002742310442269245,
+          -0.020399999999993725
+        ],
+        [
+          -0.1790000000000131,
+          0.002742310442227334,
+          -0.014899999999993242
+        ]
+      ]
+    },
+    {
+      "name": "035_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001377,
+          -0.0027423104422692546,
+          0.019600000000005946
+        ],
+        [
+          -0.1790000000000131,
+          0.0027423104422273246,
+          0.02510000000000645
+        ]
+      ]
+    },
+    {
+      "name": "036_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001377,
+          -0.002742310442269267,
+          0.059600000000005954
+        ],
+        [
+          -0.1790000000000131,
+          0.002742310442227312,
+          0.06510000000000644
+        ]
+      ]
+    },
+    {
+      "name": "037_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001377,
+          -0.002742310442269279,
+          0.09960000000000598
+        ],
+        [
+          -0.1790000000000131,
+          0.0027423104422273003,
+          0.10510000000000645
+        ]
+      ]
+    },
+    {
+      "name": "038_M3x8 SHCS",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.19000000000001366,
+          -0.0027423104422692832,
+          0.13960000000000605
+        ],
+        [
+          -0.17900000000001293,
+          0.002742310442227296,
+          0.14510000000000656
+        ]
+      ]
+    },
+    {
+      "name": "039_SOLID",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/MGN9 rail - 300mm/SOLID",
+      "triangles": 7816,
+      "bounds_m": [
+        [
+          -0.18500000000004602,
+          -0.004500000000048103,
+          -0.14764999999999384
+        ],
+        [
+          -0.17849999999997773,
+          0.00449999999999547,
+          0.15235000000000742
+        ]
+      ]
+    },
+    {
+      "name": "040_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.19069770369089234,
+          -0.0038498783444583127,
+          -0.16284999999999783
+        ],
+        [
+          -0.1863977036908826,
+          0.0038498783450786923,
+          -0.1498499999999972
+        ]
+      ]
+    },
+    {
+      "name": "041_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.1988498783447727,
+          -0.008599999999641856,
+          0.15254999999999103
+        ],
+        [
+          -0.19115012165523604,
+          -0.004299999999632446,
+          0.16554999999999137
+        ]
+      ]
+    },
+    {
+      "name": "042_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.19884987834477347,
+          -0.008599999999641695,
+          0.16954999999999104
+        ],
+        [
+          -0.19115012165523676,
+          -0.004299999999632323,
+          0.18254999999999139
+        ]
+      ]
+    },
+    {
+      "name": "043_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.1988498783446752,
+          0.0043000000003052645,
+          -0.177850000000004
+        ],
+        [
+          -0.19115012165513873,
+          0.00860000000031468,
+          -0.1648500000000037
+        ]
+      ]
+    },
+    {
+      "name": "044_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.19884987834478574,
+          0.00430000000036009,
+          0.16954999999999
+        ],
+        [
+          -0.19115012165524908,
+          0.008600000000369446,
+          0.1825499999999904
+        ]
+      ]
+    },
+    {
+      "name": "045_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.19884987834476137,
+          -0.008599999999696052,
+          -0.16085000000000305
+        ],
+        [
+          -0.19115012165522483,
+          -0.004299999999686686,
+          -0.14785000000000276
+        ]
+      ]
+    },
+    {
+      "name": "046_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.1988498783447606,
+          -0.00859999999969647,
+          -0.17785000000000306
+        ],
+        [
+          -0.1911501216552241,
+          -0.004299999999687071,
+          -0.1648500000000028
+        ]
+      ]
+    },
+    {
+      "name": "047_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.198849878344785,
+          0.004300000000360059,
+          0.15254999999999003
+        ],
+        [
+          -0.1911501216552483,
+          0.008600000000369451,
+          0.16554999999999043
+        ]
+      ]
+    },
+    {
+      "name": "048_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.19070000000001475,
+          -0.0038498783443999727,
+          0.1545499999999897
+        ],
+        [
+          -0.186400000000005,
+          0.003849878345138959,
+          0.16754999999999137
+        ]
+      ]
+    },
+    {
+      "name": "049_2020 Drop-in T-nut, M5",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.198849878344676,
+          0.004300000000305816,
+          -0.160850000000003
+        ],
+        [
+          -0.19115012165513945,
+          0.0086000000003152,
+          -0.1478500000000027
+        ]
+      ]
+    },
+    {
+      "name": "050_SOLID",
+      "role": "frame",
+      "source_path": "printed VT 6mm 2WD/VT gantry extrusions/HFSB5-2020-370/SOLID",
+      "triangles": 568,
+      "bounds_m": [
+        [
+          -0.20500000000001944,
+          -0.01000000000000311,
+          -0.18264999999999332
+        ],
+        [
+          -0.18500000000000205,
+          0.009999999999997164,
+          0.18735000000000757
+        ]
+      ]
+    },
+    {
+      "name": "051_6mm 2WD belt",
+      "role": "belt_b",
+      "source_path": "printed VT 6mm 2WD/6mm 2WD belts/6mm 2WD belt",
+      "triangles": 9136,
+      "bounds_m": [
+        [
+          -0.169239999999999,
+          -0.008000000000002663,
+          -0.19198855984892743
+        ],
+        [
+          0.1782156797651171,
+          -0.002000000000002538,
+          0.1996844325729667
+        ]
+      ]
+    },
+    {
+      "name": "052_6mm 2WD belt",
+      "role": "belt_a",
+      "source_path": "printed VT 6mm 2WD/6mm 2WD belts/6mm 2WD belt",
+      "triangles": 9136,
+      "bounds_m": [
+        [
+          -0.17821567976511715,
+          0.0019999999999973208,
+          -0.19198855984892743
+        ],
+        [
+          0.16923999999999895,
+          0.007999999999997466,
+          0.19968443257296664
+        ]
+      ]
+    },
+    {
+      "name": "053_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.14025000000000143,
+          -0.002742303856482907,
+          -0.01565000000001593
+        ],
+        [
+          -0.13475000000000092,
+          0.0027423170280136714,
+          -0.004650000000015246
+        ]
+      ]
+    },
+    {
+      "name": "054_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.1152500000000014,
+          -0.002742305053897499,
+          -0.015650000000013497
+        ],
+        [
+          -0.1097500000000009,
+          0.00274231583059908,
+          -0.0046500000000128175
+        ]
+      ]
+    },
+    {
+      "name": "055_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.09025000000000133,
+          -0.0027423038564829043,
+          -0.015650000000016002
+        ],
+        [
+          -0.08475000000000082,
+          0.002742317028013674,
+          -0.004650000000015322
+        ]
+      ]
+    },
+    {
+      "name": "056_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.04025000000000123,
+          -0.0027423038564829043,
+          -0.015650000000016043
+        ],
+        [
+          -0.03475000000000078,
+          0.002742317028013674,
+          -0.004650000000015364
+        ]
+      ]
+    },
+    {
+      "name": "057_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.009749999999998815,
+          -0.0027423038564829087,
+          -0.015650000000016043
+        ],
+        [
+          0.01524999999999932,
+          0.0027423170280136697,
+          -0.004650000000015364
+        ]
+      ]
+    },
+    {
+      "name": "058_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.05974999999999886,
+          -0.0027423038564829043,
+          -0.01565000000001608
+        ],
+        [
+          0.06524999999999936,
+          0.002742317028013674,
+          -0.004650000000015406
+        ]
+      ]
+    },
+    {
+      "name": "059_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1097499999999989,
+          -0.0027423038564829048,
+          -0.01565000000001612
+        ],
+        [
+          0.1152499999999993,
+          0.002742317028013674,
+          -0.00465000000001544
+        ]
+      ]
+    },
+    {
+      "name": "060_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.06525000000000136,
+          -0.002742305053897501,
+          -0.0156500000000135
+        ],
+        [
+          -0.059750000000000913,
+          0.0027423158305990777,
+          -0.004650000000012824
+        ]
+      ]
+    },
+    {
+      "name": "061_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.015250000000001318,
+          -0.002742305053897499,
+          -0.015650000000013507
+        ],
+        [
+          -0.009750000000000758,
+          0.00274231583059908,
+          -0.004650000000012824
+        ]
+      ]
+    },
+    {
+      "name": "062_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.034749999999998726,
+          -0.002742305053897501,
+          -0.015650000000013577
+        ],
+        [
+          0.04024999999999934,
+          0.0027423158305990777,
+          -0.004650000000012894
+        ]
+      ]
+    },
+    {
+      "name": "063_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.08474999999999888,
+          -0.0027423050538975032,
+          -0.015650000000013688
+        ],
+        [
+          0.09024999999999928,
+          0.002742315830599075,
+          -0.004650000000013012
+        ]
+      ]
+    },
+    {
+      "name": "064_M3x8 SHCS",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/M3x8 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.13474999999999893,
+          -0.0027423050538975006,
+          -0.01565000000001369
+        ],
+        [
+          0.14024999999999932,
+          0.0027423158305990777,
+          -0.004650000000013012
+        ]
+      ]
+    },
+    {
+      "name": "065_SOLID",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12 rail - 300mm/SOLID",
+      "triangles": 4658,
+      "bounds_m": [
+        [
+          -0.15000000028738053,
+          -0.005999994012942503,
+          -0.011150000000017722
+        ],
+        [
+          0.15000000028737848,
+          0.006000013171558836,
+          -0.0031499999995101696
+        ]
+      ]
+    },
+    {
+      "name": "066_MGN12H",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN12H specific/MGN12H",
+      "triangles": 7940,
+      "bounds_m": [
+        [
+          -0.022700000632236317,
+          -0.013500000775914098,
+          -0.008150000000005875
+        ],
+        [
+          0.02270000063223432,
+          0.013500000775936034,
+          0.001850000000000504
+        ]
+      ]
+    },
+    {
+      "name": "067_2020 Drop-in T-nut, M3",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M3",
+      "triangles": 742,
+      "bounds_m": [
+        [
+          0.10749999999999915,
+          -0.003849878344769645,
+          -0.01684999999999811
+        ],
+        [
+          0.11999999999999955,
+          0.003849878344766683,
+          -0.012549999999996949
+        ]
+      ]
+    },
+    {
+      "name": "068_2020 Drop-in T-nut, M5",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.14725000000001182,
+          0.00430000000004622,
+          -0.024999878344767912
+        ],
+        [
+          -0.13425000000000076,
+          0.008600000000079037,
+          -0.0173001216552308
+        ]
+      ]
+    },
+    {
+      "name": "069_2020 Drop-in T-nut, M5",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.16275000000001083,
+          0.004300000000085185,
+          -0.024999878344769244
+        ],
+        [
+          -0.14974999999999977,
+          0.008600000000117881,
+          -0.017300121655232134
+        ]
+      ]
+    },
+    {
+      "name": "070_2020 Drop-in T-nut, M5",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.13424999999998333,
+          0.004299999999915806,
+          -0.024999878344769272
+        ],
+        [
+          0.14724999999999433,
+          0.008599999999948633,
+          -0.01730012165523215
+        ]
+      ]
+    },
+    {
+      "name": "071_2020 Drop-in T-nut, M5",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.16274999999999307,
+          -0.008599999999914834,
+          -0.02499987834477017
+        ],
+        [
+          -0.14974999999998206,
+          -0.004299999999882167,
+          -0.01730012165523305
+        ]
+      ]
+    },
+    {
+      "name": "072_2020 Drop-in T-nut, M5",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.14975000000000094,
+          -0.008600000000123195,
+          -0.024999878344769376
+        ],
+        [
+          0.16275000000001205,
+          -0.004300000000090495,
+          -0.017300121655232262
+        ]
+      ]
+    },
+    {
+      "name": "073_2020 Drop-in T-nut, M5",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.1497499999999823,
+          0.004299999999876855,
+          -0.024999878344770347
+        ],
+        [
+          0.1627499999999933,
+          0.008599999999909526,
+          -0.017300121655233227
+        ]
+      ]
+    },
+    {
+      "name": "074_2020 Drop-in T-nut, M3",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/2020 Drop-in T-nut, M3",
+      "triangles": 742,
+      "bounds_m": [
+        [
+          -0.11999999999999927,
+          -0.0038498783447720145,
+          -0.016849999999998044
+        ],
+        [
+          -0.10749999999999876,
+          0.0038498783447643114,
+          -0.012549999999996887
+        ]
+      ]
+    },
+    {
+      "name": "075_SOLID",
+      "role": "x_axis",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/HFSB5-2020-330/SOLID",
+      "triangles": 568,
+      "bounds_m": [
+        [
+          -0.16500000000000142,
+          -0.010000000000002228,
+          -0.031149999999996958
+        ],
+        [
+          0.16499999999999915,
+          0.009999999999997875,
+          -0.011149999999996822
+        ]
+      ]
+    },
+    {
+      "name": "076_Shim 1mm",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.15424999999161992,
+          -0.005499999523165114,
+          0.0066511848112722136
+        ],
+        [
+          0.16224999999161993,
+          -0.004499999523165094,
+          0.014628815188721674
+        ]
+      ]
+    },
+    {
+      "name": "077_Shim 0.5mm",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.15424999999161904,
+          -0.009999999523165467,
+          0.006601184811272802
+        ],
+        [
+          0.16224999999161904,
+          -0.009499999523165454,
+          0.014578815188722262
+        ]
+      ]
+    },
+    {
+      "name": "078_Shim 0.5mm",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.15424999999161992,
+          -0.0004999995231654737,
+          0.006601184811274002
+        ],
+        [
+          0.16224999999161993,
+          4.768345372191397e-10,
+          0.014578815188723462
+        ]
+      ]
+    },
+    {
+      "name": "079_6mm GT2 20T idler Gates",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/6mm GT2 20T idler Gates",
+      "triangles": 6440,
+      "bounds_m": [
+        [
+          0.15501398901170393,
+          -4.026071170894371e-15,
+          -0.010149294806185288
+        ],
+        [
+          0.1699860109880319,
+          0.009999999999998862,
+          0.004849294806182285
+        ]
+      ]
+    },
+    {
+      "name": "080_MGN9H",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/MGN9H",
+      "triangles": 6306,
+      "bounds_m": [
+        [
+          0.1749999999999945,
+          -0.010000000000006932,
+          -0.025482898037981518
+        ],
+        [
+          0.18300000000000172,
+          0.00999999999999654,
+          0.015182898037983825
+        ]
+      ]
+    },
+    {
+      "name": "081_6mm bearing stack",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/6mm bearing stack",
+      "triangles": 3864,
+      "bounds_m": [
+        [
+          0.15076456562308505,
+          -0.00949999952316684,
+          0.003090582806390213
+        ],
+        [
+          0.16573543436015403,
+          -0.0004999995231640945,
+          0.018089417193606107
+        ]
+      ]
+    },
+    {
+      "name": "082_D5x28mm smooth pin",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          0.15574999999161898,
+          -0.014000000000002568,
+          0.008096990507044564
+        ],
+        [
+          0.1607499999916191,
+          0.013999999999997462,
+          0.013083009492950465
+        ]
+      ]
+    },
+    {
+      "name": "083_D5x28mm smooth pin",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          0.15999999999986692,
+          -0.01400000000000262,
+          -0.005143009492955451
+        ],
+        [
+          0.16499999999986703,
+          0.013999999999997412,
+          -0.00015699050704955086
+        ]
+      ]
+    },
+    {
+      "name": "084_M5x10 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.1537999999999904,
+          -0.01775000000000329,
+          -0.025886718036613326
+        ],
+        [
+          0.16329999999999045,
+          -0.005000000000001911,
+          -0.016413281963392094
+        ]
+      ]
+    },
+    {
+      "name": "085_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17015000000000202,
+          -0.010342030821968943,
+          9.506284648352903e-16
+        ],
+        [
+          0.17780000000000207,
+          -0.0046579691780362165,
+          0.005700000000000954
+        ]
+      ]
+    },
+    {
+      "name": "086_M3x30 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3x30 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17055796917803556,
+          -0.01500000000000234,
+          -0.020599999999999057
+        ],
+        [
+          0.17624203082196843,
+          0.016649999999997667,
+          -0.014899999999999056
+        ]
+      ]
+    },
+    {
+      "name": "087_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17015000000000202,
+          0.004657969178031065,
+          9.506284648352903e-16
+        ],
+        [
+          0.17780000000000207,
+          0.010342030821963792,
+          0.005700000000000954
+        ]
+      ]
+    },
+    {
+      "name": "088_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17015000000000202,
+          0.00465796917803108,
+          -0.015999999999998942
+        ],
+        [
+          0.17780000000000207,
+          0.01034203082196381,
+          -0.010299999999998949
+        ]
+      ]
+    },
+    {
+      "name": "089_M3 threaded insert",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3 threaded insert",
+      "triangles": 2834,
+      "bounds_m": [
+        [
+          0.17090032180311432,
+          -0.015000000000005623,
+          0.00495005836770767
+        ],
+        [
+          0.17589967819689167,
+          -0.011150000000000692,
+          0.009949741745475214
+        ]
+      ]
+    },
+    {
+      "name": "090_M5x10 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.13830000000000042,
+          0.004999999999996916,
+          -0.025886718036613205
+        ],
+        [
+          0.1478000000000005,
+          0.017749999999998278,
+          -0.016413281963391983
+        ]
+      ]
+    },
+    {
+      "name": "091_M5x10 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.1537999999999995,
+          0.004999999999996917,
+          -0.025886718036613104
+        ],
+        [
+          0.16329999999999956,
+          0.017749999999998285,
+          -0.016413281963391882
+        ]
+      ]
+    },
+    {
+      "name": "092_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17015000000000202,
+          -0.010342030821968919,
+          -0.01599999999999905
+        ],
+        [
+          0.17780000000000207,
+          -0.004657969178036192,
+          -0.010299999999999046
+        ]
+      ]
+    },
+    {
+      "name": "093_M3 threaded insert",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3 threaded insert",
+      "triangles": 2834,
+      "bounds_m": [
+        [
+          0.17090032180311432,
+          -0.015000000000005715,
+          -0.020249941632292226
+        ],
+        [
+          0.17589967819689167,
+          -0.011150000000000786,
+          -0.015250258254524675
+        ]
+      ]
+    },
+    {
+      "name": "094_M3x30 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm right XY joint hardware/M3x30 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17055796917803556,
+          -0.015000000000002345,
+          0.0046000000000008465
+        ],
+        [
+          0.17624203082196843,
+          0.01664999999999766,
+          0.01030000000000085
+        ]
+      ]
+    },
+    {
+      "name": "095_6mm 2WD XY joint right a",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint right a",
+      "triangles": 5058,
+      "bounds_m": [
+        [
+          0.13559999999159889,
+          -0.0014000000000024548,
+          -0.031150000000001853
+        ],
+        [
+          0.17790000000000106,
+          0.014999999999998582,
+          0.018089999999997747
+        ]
+      ]
+    },
+    {
+      "name": "096_6mm 2WD XY joint right b",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD right XY joint/6mm 2WD XY joint right b",
+      "triangles": 6984,
+      "bounds_m": [
+        [
+          0.15000000000000568,
+          -0.015000000000004962,
+          -0.031150000000001947
+        ],
+        [
+          0.18627687284075645,
+          -2.883804306463845e-15,
+          0.01808999999999767
+        ]
+      ]
+    },
+    {
+      "name": "097_6mm 2WD XY joint left a",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint left a",
+      "triangles": 6394,
+      "bounds_m": [
+        [
+          -0.17790000000000689,
+          -1.6320278461989404e-15,
+          -0.031150000000002873
+        ],
+        [
+          -0.135599999991605,
+          0.015000000000001934,
+          0.018089999999997677
+        ]
+      ]
+    },
+    {
+      "name": "098_6mm 2WD XY joint left b",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint left b",
+      "triangles": 5418,
+      "bounds_m": [
+        [
+          -0.17790000000000117,
+          -0.015000000000003148,
+          -0.031150000000001843
+        ],
+        [
+          -0.15000000000000013,
+          0.0013999999999972325,
+          0.01808999999999776
+        ]
+      ]
+    },
+    {
+      "name": "099_Shim 1mm",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.16224999999162,
+          0.004499999523159873,
+          0.0066511848112722136
+        ],
+        [
+          -0.15424999999161992,
+          0.0054999995231598915,
+          0.014628815188721674
+        ]
+      ]
+    },
+    {
+      "name": "100_Shim 0.5mm",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.162249999991619,
+          0.009499999523160222,
+          0.006601184811272705
+        ],
+        [
+          -0.15424999999161892,
+          0.009999999523160235,
+          0.014578815188722158
+        ]
+      ]
+    },
+    {
+      "name": "101_Shim 0.5mm",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.16224999999162,
+          -4.768397668137712e-10,
+          0.006601184811274002
+        ],
+        [
+          -0.15424999999161992,
+          0.0004999995231602457,
+          0.014578815188723462
+        ]
+      ]
+    },
+    {
+      "name": "102_6mm GT2 20T idler Gates",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/6mm GT2 20T idler Gates",
+      "triangles": 6440,
+      "bounds_m": [
+        [
+          -0.16998601098803096,
+          -0.010000000000004098,
+          -0.010149294806185191
+        ],
+        [
+          -0.15501398901170282,
+          -1.2004449012832072e-15,
+          0.004849294806182382
+        ]
+      ]
+    },
+    {
+      "name": "103_MGN9H",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/MGN9H",
+      "triangles": 6306,
+      "bounds_m": [
+        [
+          -0.18300000000000183,
+          -0.010000000000002696,
+          -0.025482898037981518
+        ],
+        [
+          -0.17499999999999455,
+          0.010000000000000765,
+          0.015182898037983825
+        ]
+      ]
+    },
+    {
+      "name": "104_6mm bearing stack",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/6mm bearing stack",
+      "triangles": 3864,
+      "bounds_m": [
+        [
+          -0.16573543436015403,
+          0.0004999995231588715,
+          0.003090582806390213
+        ],
+        [
+          -0.150764565623085,
+          0.00949999952316161,
+          0.018089417193606107
+        ]
+      ]
+    },
+    {
+      "name": "105_D5x28mm smooth pin",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          -0.1607499999916191,
+          -0.014000000000002734,
+          0.008096990507044585
+        ],
+        [
+          -0.15574999999161898,
+          0.013999999999997298,
+          0.013083009492950513
+        ]
+      ]
+    },
+    {
+      "name": "106_D5x28mm smooth pin",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm 2WD XY joint motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          -0.16499999999986698,
+          -0.014000000000002674,
+          -0.005143009492955368
+        ],
+        [
+          -0.15999999999986686,
+          0.013999999999997358,
+          -0.0001569905070494329
+        ]
+      ]
+    },
+    {
+      "name": "107_M5x10 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.16330000000000905,
+          -0.017749999999960717,
+          -0.025886718036613108
+        ],
+        [
+          -0.15380000000000893,
+          -0.004999999999959338,
+          -0.01641328196339188
+        ]
+      ]
+    },
+    {
+      "name": "108_M3x30 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3x30 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.17624203082196754,
+          -0.015000000000002435,
+          -0.02059999999999914
+        ],
+        [
+          -0.17055796917803479,
+          0.016649999999997566,
+          -0.01489999999999914
+        ]
+      ]
+    },
+    {
+      "name": "109_M3 threaded insert",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3 threaded insert",
+      "triangles": 2834,
+      "bounds_m": [
+        [
+          -0.17589967819688906,
+          -0.015000000000005556,
+          0.0049502582545214655
+        ],
+        [
+          -0.1709003218031117,
+          -0.011150000000000618,
+          0.009949941632289017
+        ]
+      ]
+    },
+    {
+      "name": "110_M3x30 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3x30 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.17624203082196754,
+          -0.015000000000002442,
+          0.004600000000000867
+        ],
+        [
+          -0.17055796917803479,
+          0.01664999999999756,
+          0.010300000000000871
+        ]
+      ]
+    },
+    {
+      "name": "111_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.1778000022233393,
+          -0.010342030821977051,
+          1.4516272905940042e-10
+        ],
+        [
+          -0.17015000222333782,
+          -0.004657969178043455,
+          0.005700000145162733
+        ]
+      ]
+    },
+    {
+      "name": "112_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.17780000222333053,
+          0.004657969177995895,
+          -0.01599999985486277
+        ],
+        [
+          -0.170150002223329,
+          0.010342030821929492,
+          -0.010299999854862768
+        ]
+      ]
+    },
+    {
+      "name": "113_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.17780000222333942,
+          -0.010342030822004154,
+          -0.01599999985483738
+        ],
+        [
+          -0.17015000222333793,
+          -0.00465796917807056,
+          -0.010299999854837365
+        ]
+      ]
+    },
+    {
+      "name": "114_M3x6 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3x6 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.17780000222333048,
+          0.00465796917802297,
+          1.4513773516355855e-10
+        ],
+        [
+          -0.17015000222332888,
+          0.010342030821956567,
+          0.005700000145137739
+        ]
+      ]
+    },
+    {
+      "name": "115_M5x10 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.1632999999999996,
+          0.00499999999999679,
+          -0.025886718036613087
+        ],
+        [
+          -0.15379999999999944,
+          0.017749999999998156,
+          -0.016413281963391865
+        ]
+      ]
+    },
+    {
+      "name": "116_M3 threaded insert",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M3 threaded insert",
+      "triangles": 2834,
+      "bounds_m": [
+        [
+          -0.17589967819688918,
+          -0.01500000000000555,
+          -0.020249741745478632
+        ],
+        [
+          -0.17090032180311182,
+          -0.01115000000000061,
+          -0.01525005836771108
+        ]
+      ]
+    },
+    {
+      "name": "117_M5x10 BHCS",
+      "role": "xy_joint",
+      "source_path": "printed VT 6mm 2WD/printed 6mm 2WD X axis/6mm 2WD left XY joint/6mm left XY joint hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.14779999999999988,
+          0.004999999999996375,
+          -0.025886718036613188
+        ],
+        [
+          -0.1382999999999997,
+          0.01774999999999777,
+          -0.016413281963391965
+        ]
+      ]
+    },
+    {
+      "name": "118_GT2 20T 6mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/GT2 20T 6mm",
+      "triangles": 6214,
+      "bounds_m": [
+        [
+          0.16349897520166168,
+          -0.009700000000003638,
+          0.1849530086855008
+        ],
+        [
+          0.17948999713035196,
+          0.006299999999998383,
+          0.20094999713883266
+        ]
+      ]
+    },
+    {
+      "name": "119_6mm bearing stack",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/6mm bearing stack",
+      "triangles": 3864,
+      "bounds_m": [
+        [
+          0.16825456563152852,
+          -0.009500000000004026,
+          0.1694505828063923
+        ],
+        [
+          0.18322543436859762,
+          -0.0005000000000012824,
+          0.1844494171936082
+        ]
+      ]
+    },
+    {
+      "name": "120_F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/F695",
+      "triangles": 2016,
+      "bounds_m": [
+        [
+          0.16399149194574303,
+          0.0073999999999970366,
+          0.18546128044901705
+        ],
+        [
+          0.17898850803730082,
+          0.011399999999997412,
+          0.20043871955098458
+        ]
+      ]
+    },
+    {
+      "name": "121_F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/F695",
+      "triangles": 2016,
+      "bounds_m": [
+        [
+          0.16399149194574347,
+          -0.014800000000002847,
+          0.18546128044901733
+        ],
+        [
+          0.17898850803730115,
+          -0.010800000000002438,
+          0.20043871955098486
+        ]
+      ]
+    },
+    {
+      "name": "122_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.16749601623099775,
+          -0.010800000000002878,
+          0.18895079570891893
+        ],
+        [
+          0.1754839837520471,
+          -0.009800000000002645,
+          0.1969492042910831
+        ]
+      ]
+    },
+    {
+      "name": "123_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.16749601623099497,
+          0.006399999999997184,
+          0.18895079570891915
+        ],
+        [
+          0.17548398375204444,
+          0.0073999999999974165,
+          0.1969492042910833
+        ]
+      ]
+    },
+    {
+      "name": "124_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.1717400000000635,
+          -0.00550000000000268,
+          0.17296118481127543
+        ],
+        [
+          0.17974000000006352,
+          -0.00450000000000266,
+          0.1809388151887249
+        ]
+      ]
+    },
+    {
+      "name": "125_Shim 0.5mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.17174000000006384,
+          -0.0005000000000026684,
+          0.17296118481127631
+        ],
+        [
+          0.17974000000006396,
+          -2.655832569208734e-15,
+          0.18093881518872573
+        ]
+      ]
+    },
+    {
+      "name": "126_Shim 0.5mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.17174000000006284,
+          -0.010000000000002658,
+          0.17296118481127493
+        ],
+        [
+          0.17974000000006296,
+          -0.009500000000002643,
+          0.18093881518872434
+        ]
+      ]
+    },
+    {
+      "name": "127_D5x28mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          0.1689899999915222,
+          -0.014999999976160803,
+          0.19045699050704828
+        ],
+        [
+          0.17398999999152231,
+          0.01300000002383923,
+          0.19544300949295418
+        ]
+      ]
+    },
+    {
+      "name": "128_D5x28mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          0.1732400000000639,
+          -0.014000000000002639,
+          0.17445699050704816
+        ],
+        [
+          0.17824000000006401,
+          0.01399999999999739,
+          0.17944300949295405
+        ]
+      ]
+    },
+    {
+      "name": "129_M3x30 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M3x30 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.17615796917803395,
+          -0.016649999988081844,
+          0.19900000000000118
+        ],
+        [
+          0.1818420308219667,
+          0.015000000011918204,
+          0.20470000000000116
+        ]
+      ]
+    },
+    {
+      "name": "130_M3 threaded insert",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M3 threaded insert",
+      "triangles": 2834,
+      "bounds_m": [
+        [
+          0.17650032180311137,
+          0.011149999999995315,
+          0.19935025825452413
+        ],
+        [
+          0.18149967819688873,
+          0.015000000000000284,
+          0.2043499416322917
+        ]
+      ]
+    },
+    {
+      "name": "131_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.1902499999999998,
+          -0.017750000000003457,
+          0.15661328196339042
+        ],
+        [
+          0.19974999999999987,
+          -0.005000000000002046,
+          0.16608671803661162
+        ]
+      ]
+    },
+    {
+      "name": "132_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.19024999999999959,
+          0.004999999988075842,
+          0.17361328196339043
+        ],
+        [
+          0.19974999999999965,
+          0.01774999998807726,
+          0.18308671803661164
+        ]
+      ]
+    },
+    {
+      "name": "133_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.1902499999999997,
+          0.004999999988075847,
+          0.1566132819633903
+        ],
+        [
+          0.19974999999999976,
+          0.017749999988077268,
+          0.16608671803661157
+        ]
+      ]
+    },
+    {
+      "name": "134_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.19024999999999959,
+          -0.017750000000003464,
+          0.17361328196339043
+        ],
+        [
+          0.19974999999999965,
+          -0.0050000000000020505,
+          0.18308671803661164
+        ]
+      ]
+    },
+    {
+      "name": "135_M5x12 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x12 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.1751499999999997,
+          -0.004750000000002648,
+          0.15861328196339064
+        ],
+        [
+          0.18989999999999962,
+          0.004749999999997352,
+          0.16808671803661185
+        ]
+      ]
+    },
+    {
+      "name": "136_M5 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.17789999999999961,
+          -0.005000000000002648,
+          0.15836398101409532
+        ],
+        [
+          0.1789999999999996,
+          0.004999999999997352,
+          0.1683360189859071
+        ]
+      ]
+    },
+    {
+      "name": "137_VT 6mm front motorless mount body a",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount body a",
+      "triangles": 5546,
+      "bounds_m": [
+        [
+          0.1614899999915228,
+          -0.01500000001192219,
+          0.1523499999736762
+        ],
+        [
+          0.20500000000000096,
+          -2.3837960074359828e-11,
+          0.2063500000000012
+        ]
+      ]
+    },
+    {
+      "name": "138_VT 6mm front motorless mount body b",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount body b",
+      "triangles": 6168,
+      "bounds_m": [
+        [
+          0.16148999999152047,
+          -0.0014000000119272465,
+          0.15234999997367604
+        ],
+        [
+          0.2049999999999984,
+          0.014999999999996464,
+          0.20635000000000103
+        ]
+      ]
+    },
+    {
+      "name": "139_GT2 20T 6mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/GT2 20T 6mm",
+      "triangles": 6214,
+      "bounds_m": [
+        [
+          -0.17948999713035213,
+          -0.00630000000000373,
+          0.18495300868550069
+        ],
+        [
+          -0.1634989752016619,
+          0.009699999999998293,
+          0.20094999713883255
+        ]
+      ]
+    },
+    {
+      "name": "140_6mm bearing stack",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/6mm bearing stack",
+      "triangles": 3864,
+      "bounds_m": [
+        [
+          -0.18322543436859795,
+          0.0004999999999959576,
+          0.1694505828063924
+        ],
+        [
+          -0.1682545656315289,
+          0.009499999999998695,
+          0.1844494171936083
+        ]
+      ]
+    },
+    {
+      "name": "141_F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/F695",
+      "triangles": 2016,
+      "bounds_m": [
+        [
+          -0.1789885080373011,
+          -0.011400000000002753,
+          0.18546128044901705
+        ],
+        [
+          -0.16399149194574336,
+          -0.007400000000002368,
+          0.20043871955098458
+        ]
+      ]
+    },
+    {
+      "name": "142_F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/F695",
+      "triangles": 2016,
+      "bounds_m": [
+        [
+          -0.17898850803730149,
+          0.010799999999997097,
+          0.18546128044901716
+        ],
+        [
+          -0.1639914919457437,
+          0.014799999999997515,
+          0.2004387195509847
+        ]
+      ]
+    },
+    {
+      "name": "143_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.1754839837520472,
+          0.009799999999997307,
+          0.18895079570891904
+        ],
+        [
+          -0.16749601623099786,
+          0.010799999999997544,
+          0.1969492042910832
+        ]
+      ]
+    },
+    {
+      "name": "144_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.17548398375204471,
+          -0.007400000000002755,
+          0.18895079570891904
+        ],
+        [
+          -0.1674960162309953,
+          -0.006400000000002518,
+          0.1969492042910832
+        ]
+      ]
+    },
+    {
+      "name": "145_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.17974000000006363,
+          0.004499999999997332,
+          0.17296118481127548
+        ],
+        [
+          -0.17174000000006356,
+          0.005499999999997352,
+          0.18093881518872496
+        ]
+      ]
+    },
+    {
+      "name": "146_Shim 0.5mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.17974000000006407,
+          -2.672683610743113e-15,
+          0.17296118481127637
+        ],
+        [
+          -0.171740000000064,
+          0.0004999999999973405,
+          0.1809388151887259
+        ]
+      ]
+    },
+    {
+      "name": "147_Shim 0.5mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/Shim 0.5mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.17974000000006302,
+          0.009499999999997314,
+          0.17296118481127498
+        ],
+        [
+          -0.171740000000063,
+          0.009999999999997329,
+          0.18093881518872446
+        ]
+      ]
+    },
+    {
+      "name": "148_D5x28mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          -0.17398999999152231,
+          -0.013000000023844558,
+          0.19045699050704817
+        ],
+        [
+          -0.1689899999915222,
+          0.014999999976155474,
+          0.19544300949295407
+        ]
+      ]
+    },
+    {
+      "name": "149_D5x28mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/6mm front motorless mount motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          -0.1782400000000645,
+          -0.014000000000002717,
+          0.1744569905070481
+        ],
+        [
+          -0.17324000000006434,
+          0.013999999999997313,
+          0.17944300949295405
+        ]
+      ]
+    },
+    {
+      "name": "150_M3x30 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M3x30 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          -0.1818420308219671,
+          -0.015000000011923547,
+          0.19900000000000118
+        ],
+        [
+          -0.17615796917803433,
+          0.0166499999880765,
+          0.20470000000000116
+        ]
+      ]
+    },
+    {
+      "name": "151_M3 threaded insert",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M3 threaded insert",
+      "triangles": 2834,
+      "bounds_m": [
+        [
+          -0.181499678196889,
+          -0.015000000000005625,
+          0.19935025825452435
+        ],
+        [
+          -0.17650032180311165,
+          -0.011150000000000658,
+          0.20434994163229186
+        ]
+      ]
+    },
+    {
+      "name": "152_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.19975000000000004,
+          0.004999999999996724,
+          0.15661328196339042
+        ],
+        [
+          -0.19024999999999992,
+          0.017749999999998135,
+          0.16608671803661168
+        ]
+      ]
+    },
+    {
+      "name": "153_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.1997500000000001,
+          -0.017749999988082594,
+          0.17361328196339038
+        ],
+        [
+          -0.19024999999999992,
+          -0.004999999988081174,
+          0.18308671803661164
+        ]
+      ]
+    },
+    {
+      "name": "154_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.1997500000000001,
+          -0.01774999998808249,
+          0.15661328196339042
+        ],
+        [
+          -0.19024999999999992,
+          -0.00499999998808107,
+          0.16608671803661162
+        ]
+      ]
+    },
+    {
+      "name": "155_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.19974999999999998,
+          0.00499999999999672,
+          0.17361328196339043
+        ],
+        [
+          -0.1902499999999998,
+          0.017749999999998132,
+          0.18308671803661164
+        ]
+      ]
+    },
+    {
+      "name": "156_M5x12 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5x12 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.1898999999999999,
+          -0.0047500000000026705,
+          0.15861328196339053
+        ],
+        [
+          -0.17514999999999992,
+          0.004749999999997331,
+          0.16808671803661174
+        ]
+      ]
+    },
+    {
+      "name": "157_M5 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount hardware/M5 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.17899999999999988,
+          -0.005000000000002672,
+          0.15836398101409532
+        ],
+        [
+          -0.1778999999999999,
+          0.004999999999997329,
+          0.1683360189859071
+        ]
+      ]
+    },
+    {
+      "name": "158_VT 6mm front motorless mount body a",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount body a",
+      "triangles": 5546,
+      "bounds_m": [
+        [
+          -0.20500000000000107,
+          2.383264306287758e-11,
+          0.1523499999736762
+        ],
+        [
+          -0.16148999999152297,
+          0.015000000011916861,
+          0.2063500000000012
+        ]
+      ]
+    },
+    {
+      "name": "159_VT 6mm front motorless mount body b",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm front motorless mount/VT 6mm front motorless mount body b",
+      "triangles": 6168,
+      "bounds_m": [
+        [
+          -0.20499999999999952,
+          -0.015000000000001791,
+          0.1523499999736762
+        ],
+        [
+          -0.16148999999152158,
+          0.001400000011921904,
+          0.2063500000000012
+        ]
+      ]
+    },
+    {
+      "name": "160_GT2 20T 6mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/GT2 20T 6mm",
+      "triangles": 6214,
+      "bounds_m": [
+        [
+          0.15449984151810991,
+          -0.009700000000003515,
+          -0.19324981763060212
+        ],
+        [
+          0.1704784909886613,
+          0.006299999999998302,
+          -0.1772498419999895
+        ]
+      ]
+    },
+    {
+      "name": "161_6mm GT2 20T idler Gates",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/6mm GT2 20T idler Gates",
+      "triangles": 6440,
+      "bounds_m": [
+        [
+          0.15501069364160258,
+          -4.043502669681639e-15,
+          -0.1742082838791172
+        ],
+        [
+          0.16998930635839526,
+          0.00999999999999884,
+          -0.1592117161213512
+        ]
+      ]
+    },
+    {
+      "name": "162_6mm bearing stack",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/6mm bearing stack",
+      "triangles": 3864,
+      "bounds_m": [
+        [
+          0.14001456563143355,
+          -0.0095000000000047,
+          -0.1874494171921684
+        ],
+        [
+          0.15498543436850265,
+          -0.0005000000000019518,
+          -0.1724505828049525
+        ]
+      ]
+    },
+    {
+      "name": "163_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.1434999999999681,
+          -0.0055000000000033095,
+          -0.1839388151872846
+        ],
+        [
+          0.15149999999996822,
+          -0.00450000000000329,
+          -0.17596118480983514
+        ]
+      ]
+    },
+    {
+      "name": "164_D5x28mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          0.1599999999999988,
+          -0.01400000000000267,
+          -0.16920300949318806
+        ],
+        [
+          0.16499999999999893,
+          0.013999999999997362,
+          -0.16421699050728217
+        ]
+      ]
+    },
+    {
+      "name": "165_D5x20mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/D5x20mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          0.1449999999999687,
+          -0.012700000000003325,
+          -0.18244300949151204
+        ],
+        [
+          0.14999999999996871,
+          0.007299999999996699,
+          -0.1774569905056062
+        ]
+      ]
+    },
+    {
+      "name": "166_VT 6mm rear motor mount body b",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount body b",
+      "triangles": 14120,
+      "bounds_m": [
+        [
+          0.0889999999999983,
+          -0.015000000000002588,
+          -0.20625000000000887
+        ],
+        [
+          0.20499999999999996,
+          0.0013999999999974343,
+          -0.14764999999999884
+        ]
+      ]
+    },
+    {
+      "name": "167_6mm tensioner",
+      "role": "tensioner",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm tensioner",
+      "triangles": 7034,
+      "bounds_m": [
+        [
+          0.08899999999999897,
+          -0.013500000000004222,
+          -0.18845000000057238
+        ],
+        [
+          0.1534999999999691,
+          0.009999999999996933,
+          -0.1746500000003084
+        ]
+      ]
+    },
+    {
+      "name": "168_VT 6mm rear motor mount body a",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount body a",
+      "triangles": 13969,
+      "bounds_m": [
+        [
+          0.08899999999999819,
+          -1.7883988631900423e-11,
+          -0.20625000000000798
+        ],
+        [
+          0.20499999999999996,
+          0.014999999999997448,
+          -0.14764999999999837
+        ]
+      ]
+    },
+    {
+      "name": "169_M3x12 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3x12 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          0.1132576895577524,
+          -0.0027500000000014336,
+          -0.19105000000030786
+        ],
+        [
+          0.11874231044224881,
+          0.0027499999999985687,
+          -0.1760500000003079
+        ]
+      ]
+    },
+    {
+      "name": "170_M3x45 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3x45 SHCS",
+      "triangles": 2330,
+      "bounds_m": [
+        [
+          0.08539999999999914,
+          -0.012542310442250649,
+          -0.18500000000000888
+        ],
+        [
+          0.13339999999999919,
+          -0.0070576895577541465,
+          -0.17950000000000887
+        ]
+      ]
+    },
+    {
+      "name": "171_M3 square nut",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3 square nut",
+      "triangles": 1762,
+      "bounds_m": [
+        [
+          0.11529999999999963,
+          -0.01255000000000413,
+          -0.18500000000000788
+        ],
+        [
+          0.11709999999999954,
+          -0.007050000000004129,
+          -0.17950000000000788
+        ]
+      ]
+    },
+    {
+      "name": "172_M3 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.1125000000000006,
+          -0.003490213290135561,
+          -0.1796500000003079
+        ],
+        [
+          0.1195000000000006,
+          0.003490213290132702,
+          -0.17905000000030785
+        ]
+      ]
+    },
+    {
+      "name": "173_M3 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.08839999999999903,
+          -0.013290213290136547,
+          -0.18575000000000885
+        ],
+        [
+          0.08899999999999908,
+          -0.0063097867098682835,
+          -0.17875000000000885
+        ]
+      ]
+    },
+    {
+      "name": "174_M5x12 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x12 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.17515000000000003,
+          -0.00475000000000257,
+          -0.16338671803660948
+        ],
+        [
+          0.18989999999999996,
+          0.00474999999999743,
+          -0.15391328196338827
+        ]
+      ]
+    },
+    {
+      "name": "175_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.11000000000000021,
+          0.004999999999996839,
+          -0.2009867180366094
+        ],
+        [
+          0.11950000000000038,
+          0.017749999999998236,
+          -0.19151328196338818
+        ]
+      ]
+    },
+    {
+      "name": "176_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.09399999999999997,
+          -0.01775000000000337,
+          -0.2009867180366095
+        ],
+        [
+          0.10350000000000015,
+          -0.005000000000001965,
+          -0.19151328196338835
+        ]
+      ]
+    },
+    {
+      "name": "177_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.09400000000000008,
+          0.00499999999999684,
+          -0.2009867180366094
+        ],
+        [
+          0.10350000000000026,
+          0.017749999999998236,
+          -0.19151328196338818
+        ]
+      ]
+    },
+    {
+      "name": "178_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.1902499999999998,
+          0.004999999999996824,
+          -0.17838671803660938
+        ],
+        [
+          0.19974999999999987,
+          0.01774999999999822,
+          -0.16891328196338817
+        ]
+      ]
+    },
+    {
+      "name": "179_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.19025000000000003,
+          0.0049999999999968195,
+          -0.16138671803660937
+        ],
+        [
+          0.1997500000000002,
+          0.017749999999998215,
+          -0.15191328196338816
+        ]
+      ]
+    },
+    {
+      "name": "180_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.19025000000000014,
+          -0.017750000000002694,
+          -0.1783867180366096
+        ],
+        [
+          0.1997500000000002,
+          -0.005000000000001279,
+          -0.16891328196338834
+        ]
+      ]
+    },
+    {
+      "name": "181_M5x12 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x12 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.17514999999999992,
+          -0.004750000000003307,
+          -0.19738671803660945
+        ],
+        [
+          0.1899000000000013,
+          0.004749999999996822,
+          -0.1879132819633883
+        ]
+      ]
+    },
+    {
+      "name": "182_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.19025000000000003,
+          -0.017750000000003395,
+          -0.1613867180366096
+        ],
+        [
+          0.1997500000000002,
+          -0.005000000000001983,
+          -0.15191328196338832
+        ]
+      ]
+    },
+    {
+      "name": "183_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          0.10999999999999988,
+          -0.017750000000013873,
+          -0.2009867180366095
+        ],
+        [
+          0.11950000000000016,
+          -0.005000000000012466,
+          -0.19151328196338835
+        ]
+      ]
+    },
+    {
+      "name": "184_M5 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.17789999999999984,
+          -0.0050000000000025805,
+          -0.16363601898590474
+        ],
+        [
+          0.17899999999999994,
+          0.004999999999997421,
+          -0.15366398101409295
+        ]
+      ]
+    },
+    {
+      "name": "185_M5 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          0.17789999999999861,
+          -0.005000000000003671,
+          -0.19763601898590477
+        ],
+        [
+          0.17900000000000182,
+          0.004999999999996675,
+          -0.18766398101409298
+        ]
+      ]
+    },
+    {
+      "name": "186_2020 Drop-in T-nut, M5",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          0.18639999999999357,
+          -0.008800000000004348,
+          -0.19649987834476224
+        ],
+        [
+          0.19070000000002607,
+          0.004200000000006651,
+          -0.18880012165522475
+        ]
+      ]
+    },
+    {
+      "name": "187_GT2 20T 6mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/GT2 20T 6mm",
+      "triangles": 6214,
+      "bounds_m": [
+        [
+          -0.17047849098866136,
+          -0.006300000000003433,
+          -0.19324981763060217
+        ],
+        [
+          -0.15449984151810991,
+          0.009699999999998385,
+          -0.1772498419999895
+        ]
+      ]
+    },
+    {
+      "name": "188_6mm GT2 20T idler Gates",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/6mm GT2 20T idler Gates",
+      "triangles": 6440,
+      "bounds_m": [
+        [
+          -0.1699893063583952,
+          -0.010000000000003987,
+          -0.1742082838791172
+        ],
+        [
+          -0.15501069364160247,
+          -1.0932210717253907e-15,
+          -0.1592117161213512
+        ]
+      ]
+    },
+    {
+      "name": "189_6mm bearing stack",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/6mm bearing stack",
+      "triangles": 3864,
+      "bounds_m": [
+        [
+          -0.1549854343685026,
+          0.000499999999996824,
+          -0.1874494171921684
+        ],
+        [
+          -0.1400145656314335,
+          0.009499999999999564,
+          -0.1724505828049525
+        ]
+      ]
+    },
+    {
+      "name": "190_Shim 1mm",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/Shim 1mm",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.151499999999968,
+          0.004499999999998178,
+          -0.1839388151872846
+        ],
+        [
+          -0.14349999999996793,
+          0.005499999999998197,
+          -0.17596118480983514
+        ]
+      ]
+    },
+    {
+      "name": "191_D5x28mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/D5x28mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          -0.16499999999999881,
+          -0.014000000000002503,
+          -0.16920300949318806
+        ],
+        [
+          -0.1599999999999987,
+          0.013999999999997528,
+          -0.16421699050728217
+        ]
+      ]
+    },
+    {
+      "name": "192_D5x20mm smooth pin",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm rear motor mount motion/D5x20mm smooth pin",
+      "triangles": 332,
+      "bounds_m": [
+        [
+          -0.14999999999996882,
+          -0.007300000000001831,
+          -0.1824430094915121
+        ],
+        [
+          -0.14499999999996876,
+          0.012699999999998192,
+          -0.1774569905056062
+        ]
+      ]
+    },
+    {
+      "name": "193_VT 6mm rear motor mount body b",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount body b",
+      "triangles": 14120,
+      "bounds_m": [
+        [
+          -0.2049999999999999,
+          -0.0014000000000025624,
+          -0.20625000000000887
+        ],
+        [
+          -0.08899999999999819,
+          0.01499999999999745,
+          -0.14764999999999884
+        ]
+      ]
+    },
+    {
+      "name": "194_6mm tensioner",
+      "role": "tensioner",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/6mm tensioner",
+      "triangles": 7034,
+      "bounds_m": [
+        [
+          -0.15349999999996916,
+          -0.010000000000002061,
+          -0.18845000000057238
+        ],
+        [
+          -0.08899999999999908,
+          0.013499999999999089,
+          -0.1746500000003084
+        ]
+      ]
+    },
+    {
+      "name": "195_VT 6mm rear motor mount body a",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount body a",
+      "triangles": 13969,
+      "bounds_m": [
+        [
+          -0.20500000000000007,
+          -0.015000000000002556,
+          -0.20625000000000898
+        ],
+        [
+          -0.08899999999999825,
+          1.7878856982169114e-11,
+          -0.14764999999999934
+        ]
+      ]
+    },
+    {
+      "name": "196_M3x12 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3x12 SHCS",
+      "triangles": 1658,
+      "bounds_m": [
+        [
+          -0.11874231044224909,
+          -0.002750000000003691,
+          -0.19105000000030786
+        ],
+        [
+          -0.11325768955775262,
+          0.0027499999999963096,
+          -0.1760500000003079
+        ]
+      ]
+    },
+    {
+      "name": "197_M3x45 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3x45 SHCS",
+      "triangles": 2330,
+      "bounds_m": [
+        [
+          -0.1333999999999993,
+          0.007057689557749034,
+          -0.18500000000000888
+        ],
+        [
+          -0.08539999999999931,
+          0.01254231044224554,
+          -0.17950000000000887
+        ]
+      ]
+    },
+    {
+      "name": "198_M3 square nut",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3 square nut",
+      "triangles": 1762,
+      "bounds_m": [
+        [
+          -0.1170999999999997,
+          0.007049999999999003,
+          -0.18500000000000788
+        ],
+        [
+          -0.11529999999999979,
+          0.012549999999999005,
+          -0.17950000000000788
+        ]
+      ]
+    },
+    {
+      "name": "199_M3 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.11950000000000083,
+          -0.0034902132901378233,
+          -0.1796500000003079
+        ],
+        [
+          -0.11250000000000082,
+          0.0034902132901304395,
+          -0.17905000000030785
+        ]
+      ]
+    },
+    {
+      "name": "200_M3 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M3 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.0889999999999993,
+          0.006309786709863171,
+          -0.18575000000000885
+        ],
+        [
+          -0.08839999999999931,
+          0.013290213290131435,
+          -0.17875000000000885
+        ]
+      ]
+    },
+    {
+      "name": "201_M5x12 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x12 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.1899000000000003,
+          -0.004750000000002571,
+          -0.16338671803660948
+        ],
+        [
+          -0.1751500000000003,
+          0.004749999999997429,
+          -0.15391328196338827
+        ]
+      ]
+    },
+    {
+      "name": "202_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.11950000000000044,
+          -0.017750000000003253,
+          -0.2009867180366094
+        ],
+        [
+          -0.11000000000000032,
+          -0.005000000000001858,
+          -0.19151328196338818
+        ]
+      ]
+    },
+    {
+      "name": "203_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.10350000000000042,
+          0.004999999999996847,
+          -0.2009867180366095
+        ],
+        [
+          -0.0940000000000003,
+          0.017749999999998253,
+          -0.19151328196338835
+        ]
+      ]
+    },
+    {
+      "name": "204_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.10350000000000054,
+          -0.017750000000003353,
+          -0.2009867180366094
+        ],
+        [
+          -0.09400000000000047,
+          -0.005000000000001957,
+          -0.19151328196338818
+        ]
+      ]
+    },
+    {
+      "name": "205_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.19975000000000032,
+          -0.01775000000000336,
+          -0.17838671803660938
+        ],
+        [
+          -0.1902500000000002,
+          -0.005000000000001965,
+          -0.16891328196338817
+        ]
+      ]
+    },
+    {
+      "name": "206_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.19975000000000026,
+          -0.017750000000003364,
+          -0.16138671803660937
+        ],
+        [
+          -0.19025000000000009,
+          -0.005000000000001969,
+          -0.15191328196338816
+        ]
+      ]
+    },
+    {
+      "name": "207_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.19975000000000032,
+          0.004999999999996138,
+          -0.1783867180366096
+        ],
+        [
+          -0.1902500000000002,
+          0.01774999999999755,
+          -0.16891328196338834
+        ]
+      ]
+    },
+    {
+      "name": "208_M5x12 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x12 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.18990000000000123,
+          -0.004750000000001944,
+          -0.19738671803660945
+        ],
+        [
+          -0.1751499999999998,
+          0.004749999999998185,
+          -0.1879132819633883
+        ]
+      ]
+    },
+    {
+      "name": "209_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.19975000000000015,
+          0.004999999999996833,
+          -0.1613867180366096
+        ],
+        [
+          -0.19024999999999997,
+          0.017749999999998246,
+          -0.15191328196338832
+        ]
+      ]
+    },
+    {
+      "name": "210_M5x10 BHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5x10 BHCS",
+      "triangles": 878,
+      "bounds_m": [
+        [
+          -0.11950000000000022,
+          0.0050000000000073475,
+          -0.2009867180366095
+        ],
+        [
+          -0.1100000000000001,
+          0.017750000000008752,
+          -0.19151328196338835
+        ]
+      ]
+    },
+    {
+      "name": "211_M5 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.1790000000000001,
+          -0.005000000000002562,
+          -0.16363601898590474
+        ],
+        [
+          -0.17790000000000006,
+          0.004999999999997438,
+          -0.15366398101409295
+        ]
+      ]
+    },
+    {
+      "name": "212_M5 washer",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/M5 washer",
+      "triangles": 336,
+      "bounds_m": [
+        [
+          -0.17900000000000216,
+          -0.005000000000001796,
+          -0.19763601898590477
+        ],
+        [
+          -0.17789999999999906,
+          0.004999999999998548,
+          -0.18766398101409298
+        ]
+      ]
+    },
+    {
+      "name": "213_2020 Drop-in T-nut, M5",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/VT 6mm rear motor mount/VT 6mm rear motor mount hardware/2020 Drop-in T-nut, M5",
+      "triangles": 806,
+      "bounds_m": [
+        [
+          -0.19070000000002618,
+          -0.004200000000012776,
+          -0.19649987834476224
+        ],
+        [
+          -0.18639999999999374,
+          0.008799999999998224,
+          -0.18880012165522475
+        ]
+      ]
+    },
+    {
+      "name": "214_KW10 Microswitch",
+      "role": "hardware",
+      "source_path": "printed VT 6mm 2WD/Y endstop/Y endstop hardware/KW10 Microswitch",
+      "triangles": 1638,
+      "bounds_m": [
+        [
+          0.1810500000000046,
+          -0.025250000000004914,
+          -0.13964999999999622
+        ],
+        [
+          0.18685000000000496,
+          -0.012068348457968763,
+          -0.12672295311031478
+        ]
+      ]
+    },
+    {
+      "name": "215_M2x10 Self-tapping Screw",
+      "role": "hardware",
+      "source_path": "printed VT 6mm 2WD/Y endstop/Y endstop hardware/M2x10 Self-tapping Screw",
+      "triangles": 944,
+      "bounds_m": [
+        [
+          0.17975000000000474,
+          -0.017350000000004376,
+          -0.13739510664506252
+        ],
+        [
+          0.1910500000000056,
+          -0.01385000000000436,
+          -0.1339048933549283
+        ]
+      ]
+    },
+    {
+      "name": "216_M2x10 Self-tapping Screw",
+      "role": "hardware",
+      "source_path": "printed VT 6mm 2WD/Y endstop/Y endstop hardware/M2x10 Self-tapping Screw",
+      "triangles": 944,
+      "bounds_m": [
+        [
+          0.17975000000000474,
+          -0.023850000000004475,
+          -0.13739510664506072
+        ],
+        [
+          0.1910500000000056,
+          -0.020350000000004462,
+          -0.13390489335492647
+        ]
+      ]
+    },
+    {
+      "name": "217_M3x10 BHCS",
+      "role": "hardware",
+      "source_path": "printed VT 6mm 2WD/Y endstop/Y endstop hardware/M3x10 BHCS",
+      "triangles": 872,
+      "bounds_m": [
+        [
+          0.19215796917803873,
+          -0.016650000000002774,
+          -0.14049999999999258
+        ],
+        [
+          0.1978420308219715,
+          -0.005000000000002739,
+          -0.13479999999999254
+        ]
+      ]
+    },
+    {
+      "name": "218_2020 Drop-in T-nut, M3",
+      "role": "hardware",
+      "source_path": "printed VT 6mm 2WD/Y endstop/Y endstop hardware/2020 Drop-in T-nut, M3",
+      "triangles": 742,
+      "bounds_m": [
+        [
+          0.19115012165523693,
+          -0.008600000000002725,
+          -0.14164999999999275
+        ],
+        [
+          0.1988498783447743,
+          -0.0043000000000026645,
+          -0.129149999999992
+        ]
+      ]
+    },
+    {
+      "name": "219_Y endstop housing ab",
+      "role": "hardware",
+      "source_path": "printed VT 6mm 2WD/Y endstop/Y endstop housing ab",
+      "triangles": 2068,
+      "bounds_m": [
+        [
+          0.17880000000000495,
+          -0.027900373337574055,
+          -0.1446499999999925
+        ],
+        [
+          0.20500000000000518,
+          -0.009000000000002725,
+          -0.13064999999999236
+        ]
+      ]
+    },
+    {
+      "name": "220_6mm short shaft double shear housing F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/6mm short shaft double shear housing F695",
+      "triangles": 7560,
+      "bounds_m": [
+        [
+          -0.18350000000000233,
+          -0.020000166415698874,
+          -0.20625000000000127
+        ],
+        [
+          -0.14150000000000024,
+          -0.006599999984577313,
+          -0.16424999999999784
+        ]
+      ]
+    },
+    {
+      "name": "221_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          -0.18074231044229594,
+          -0.019999999999994543,
+          -0.20350000000000024
+        ],
+        [
+          -0.17525768955779858,
+          0.018000000000007028,
+          -0.1979999999999995
+        ]
+      ]
+    },
+    {
+      "name": "222_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          -0.18074231044229466,
+          -0.020000000000003095,
+          -0.17250000000000026
+        ],
+        [
+          -0.1752576895577973,
+          0.017999999999998476,
+          -0.16699999999999954
+        ]
+      ]
+    },
+    {
+      "name": "223_F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/F695",
+      "triangles": 2016,
+      "bounds_m": [
+        [
+          -0.16999850804577837,
+          -0.01060000000000525,
+          -0.19273871955098293
+        ],
+        [
+          -0.15500149195422042,
+          -0.006599999999999177,
+          -0.17776128044901512
+        ]
+      ]
+    },
+    {
+      "name": "224_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          -0.14974231044229608,
+          -0.020000000000004174,
+          -0.20350000000000146
+        ],
+        [
+          -0.14425768955779872,
+          0.017999999999997393,
+          -0.1980000000000008
+        ]
+      ]
+    },
+    {
+      "name": "225_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          -0.1497423104422947,
+          -0.020000000000012747,
+          -0.17250000000000149
+        ],
+        [
+          -0.14425768955779733,
+          0.017999999999988824,
+          -0.16700000000000081
+        ]
+      ]
+    },
+    {
+      "name": "226_stepper",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/NEMA17 Black/stepper",
+      "triangles": 41098,
+      "bounds_m": [
+        [
+          -0.18360000000003623,
+          0.01299999999999409,
+          -0.206349999999989
+        ],
+        [
+          -0.14140000000002972,
+          0.06200000000000584,
+          -0.1641499999999788
+        ]
+      ]
+    },
+    {
+      "name": "227_standard shaft",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/NEMA17 Black/standard shaft",
+      "triangles": 1528,
+      "bounds_m": [
+        [
+          -0.1650088569418317,
+          -0.008999997776034593,
+          -0.18775885694178418
+        ],
+        [
+          -0.15999114305823414,
+          0.059499999999998235,
+          -0.18274114305818345
+        ]
+      ]
+    },
+    {
+      "name": "228_6mm short shaft double shear housing F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/6mm short shaft double shear housing F695",
+      "triangles": 7560,
+      "bounds_m": [
+        [
+          0.14150000000000107,
+          0.006599999984568458,
+          -0.2062500000000015
+        ],
+        [
+          0.18350000000000188,
+          0.020000166415695343,
+          -0.16424999999999906
+        ]
+      ]
+    },
+    {
+      "name": "229_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          0.14425768955770812,
+          -0.018000000000002545,
+          -0.17249999999999988
+        ],
+        [
+          0.14974231044220465,
+          0.019999999999997457,
+          -0.16699999999999987
+        ]
+      ]
+    },
+    {
+      "name": "230_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          0.14425768955770812,
+          -0.01800000000000255,
+          -0.20349999999999985
+        ],
+        [
+          0.14974231044220465,
+          0.019999999999997457,
+          -0.19799999999999984
+        ]
+      ]
+    },
+    {
+      "name": "231_F695",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/F695",
+      "triangles": 2016,
+      "bounds_m": [
+        [
+          0.15500149195422108,
+          0.00659999999999712,
+          -0.19273871955098099
+        ],
+        [
+          0.16999850804577887,
+          0.010599999999997537,
+          -0.1777612804490134
+        ]
+      ]
+    },
+    {
+      "name": "232_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          0.17525768955770826,
+          -0.018000000000002563,
+          -0.17249999999999988
+        ],
+        [
+          0.18074231044220457,
+          0.019999999999997436,
+          -0.16699999999999987
+        ]
+      ]
+    },
+    {
+      "name": "233_M3x35 SHCS",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/M3x35 SHCS",
+      "triangles": 2704,
+      "bounds_m": [
+        [
+          0.17525768955770826,
+          -0.01800000000000255,
+          -0.20349999999999985
+        ],
+        [
+          0.18074231044220457,
+          0.019999999999997457,
+          -0.19799999999999984
+        ]
+      ]
+    },
+    {
+      "name": "234_stepper",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/NEMA17 Black/stepper",
+      "triangles": 41098,
+      "bounds_m": [
+        [
+          0.1413999999999498,
+          -0.06200000000000584,
+          -0.2063500000000012
+        ],
+        [
+          0.18359999999995513,
+          -0.013000000000000891,
+          -0.16415000000000055
+        ]
+      ]
+    },
+    {
+      "name": "235_standard shaft",
+      "role": "drive",
+      "source_path": "printed VT 6mm 2WD/motor config 1/6mm short shaft double shear/NEMA17 Black/standard shaft",
+      "triangles": 1528,
+      "bounds_m": [
+        [
+          0.15999114305815365,
+          -0.05950000000000294,
+          -0.1877588569417976
+        ],
+        [
+          0.16500885694175127,
+          0.008999997776029165,
+          -0.18274114305820416
+        ]
+      ]
+    }
+  ],
+  "source_geometry_parts": 246,
+  "omitted_parts": [
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9H",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/M3x8 SHCS",
+    "printed VT 6mm 2WD/printed 6mm 2WD X axis/X extrusion/MGN9H specific/MGN9 rail - 300mm/SOLID"
+  ],
+  "decimation": false,
+  "rail_configuration": "MGN12H; alternate MGN9H-specific X rail branch omitted",
+  "belt_labels": "A is the upper source belt path; B is the lower. Viewer labels, not source part names.",
+  "conversion": {
+    "linear_tolerance_mm": 0.25,
+    "angular_tolerance_radians": 0.3,
+    "tools": {
+      "build123d": "0.13.0",
+      "trimesh": "5.1.1"
+    }
+  },
+  "limitations": [
+    "Existing legacy R0 Trident 6mm 2WD gantry, not R1 or a full printer",
+    "No toolhead or sensor is present in this source assembly",
+    "Only the alternate MGN9H-specific X rail branch is omitted",
+    "Tessellated display mesh, not fabrication CAD or a tension simulation"
+  ]
+}

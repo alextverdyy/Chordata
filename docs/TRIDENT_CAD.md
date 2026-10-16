@@ -1,82 +1,79 @@
-# Official CAD asset and local viewer
+# Monolith Trident gantry CAD
 
-The tutorial uses the actual Voron Trident assembly from
-[VoronDesign/Voron-Trident](https://github.com/VoronDesign/Voron-Trident), pinned to
-commit `f04f747d4dea06315806f352abf57f767cedf2b4`.
-The [source STEP archive](https://github.com/VoronDesign/Voron-Trident/blob/f04f747d4dea06315806f352abf57f767cedf2b4/CAD/trident_assembly.step.zip)
-is 30,121,750 bytes. Its SHA-256 is
-`9fe5a74f77048603e9289bdfcfa0db60b443252b9236ac3ef39821dc2a91209a`;
-the extracted STEP SHA-256 is
-`416eda4e9212b894ed6f78ad3a6af55757115ebfcc4c18db933743d97dd48ccf`.
+The viewer uses the existing **Monolith R0 / v604, printed VT 6mm 2WD** gantry.
+It is selected from the repository's showroom STEP, not reconstructed from separate
+parts and not a full stock Voron printer.
 
-The browser asset is [web/trident.glb](../web/trident.glb).
-Its [provenance manifest](../web/trident.provenance.json) records the export checksum,
-bounds, triangle count, grouped source components and conversion settings.
-The source archive was independently matched against GitHub's pinned blob ID.
-The shipped model contains 373,377 triangles in 27 mesh groups and is 8,799,064
-bytes (8.39 MiB). Its belt meshes retain the source tessellation. Other groups
-are simplified; the requested triangle count is a target, not a hard bound on
-the decimator's output.
+- Source: [Monolith3D/Monolith_Gantry](https://github.com/Monolith3D/Monolith_Gantry/tree/0051697bd2b6c22d557c05ffe8e4b5e43c90490e).
+- CAD: [CAD/Monolith_Gantry_v604.step](https://github.com/Monolith3D/Monolith_Gantry/blob/0051697bd2b6c22d557c05ffe8e4b5e43c90490e/CAD/Monolith_Gantry_v604.step).
+- Pinned commit: `0051697bd2b6c22d557c05ffe8e4b5e43c90490e` (R0 tag).
+- STEP size: 60,201,059 bytes.
+- STEP SHA-256: `faab4005da2226e900297e4aa4ed0dab7faf9c259ddeaf20d9db1d5098e6c1ab`.
+- Source assembly: `printed VT 6mm 2WD`.
 
-## Conversion
+The file contains eight separate showroom configurations. The converter selects
+only the named Trident assembly. It uses the **MGN12H X rail configuration** and
+omits the alternative `MGN9H specific` X-rail branch, including its carriage and
+screws. Other MGN9H parts used on the Y axis remain. The gantry includes both source
+belts, two rear drives, tensioners, rails, extrusions and hardware. No toolhead or
+sensor is supplied by this CAD.
 
-Run conversion with Python 3.11 or newer on a development computer, not the printer
-host. It needs substantial
-RAM and takes several minutes to import the 185 MB STEP assembly. The printer only
-serves the finished browser asset.
+## Web asset
+
+[web/monolith-gantry.glb](../web/monolith-gantry.glb) contains the converted geometry.
+The [provenance manifest](../web/monolith-gantry.provenance.json) records the source,
+asset checksum, each source part path, omitted alternative parts, bounds and mesh
+settings. The asset contains 236 parts and 558,142 triangles, and is 9,238,092 bytes.
+Its overall dimensions are 410 × 124 × 412.7 mm. Individual source part identities
+and their relative positions are kept.
+The conversion changes units and up-axis, then uniformly recenters the gantry.
+It does not decimate the meshes or invent replacement mechanical parts.
+
+Belt labels A and B are viewer labels: A is the upper source path and B the lower.
+They are not claims about Monolith's official motor naming. Blue and amber highlights
+are applied in the viewer. The slowed pluck line is an instructional overlay, not
+measured motion or a physical tension simulation.
+
+## Convert the source
+
+Use a development computer with Python 3.11 or newer. The printer serves the
+finished GLB; it needs no CAD packages.
 
 ```sh
-python3 -m venv /tmp/trident-cad-env
-/tmp/trident-cad-env/bin/pip install -r tools/requirements-cad.txt
-/tmp/trident-cad-env/bin/python tools/prepare_trident.py
+python3 -m venv /tmp/monolith-cad-env
+/tmp/monolith-cad-env/bin/pip install -r tools/requirements-cad.txt
+/tmp/monolith-cad-env/bin/python tools/prepare_monolith.py
 ```
 
-The script downloads and verifies the pinned archive, verifies the exact STEP member,
-and tessellates its source geometry. It preserves nested assembly transforms and
-converts millimetres/Z-up to metres/Y-up. It omits enclosure panels, electronics
-and ordinary fasteners to expose the motion system and reduce loading/rendering
-cost. Lead screws and tensioner geometry remain. Other meshes are simplified to a
-triangle budget; belt geometry is preserved. Source material colors are clustered
-to three source-color representatives.
-Faces without a usable CAD triangulation are skipped. A local tessellation cache
-avoids repeating the large STEP import when adjusting the display export; delete
-the cache to repeat conversion from the verified STEP file.
+The tool downloads the pinned STEP if missing, verifies its checksum, selects the
+named assembly, tessellates its geometry and exports a self-contained GLB. Import
+can take several minutes. The importer selects the named source subtree before
+constructing display parts, preserving their assembly locations and source names.
 
-The export merges geometry by semantic role and material to reduce draw calls.
-Selection therefore identifies **CAD mesh groups**, not individual original screws
-or printable parts. The manifest lists original component paths for each group.
-This is an optimized visual mesh, not fabrication CAD or a dimensional inspection tool.
+## Viewer build
 
-## Three.js build
-
-The existing Moonraker page remains one application. It serves the spectrum code,
-bundled Three.js guide and model from fixed local routes. There is no CAD server,
-remote renderer or runtime CDN dependency. The model loads only when the guide
-is open and visible.
+The existing Moonraker companion serves the page, Three.js bundle and GLB together.
+There is no CAD server, remote renderer or runtime CDN. The GLB loads when the guide
+is opened and visible.
 
 ```sh
 npm ci
 npm run build:guide
 ```
 
-`web/guide-source.js` imports Three.js, OrbitControls and GLTFLoader. esbuild bundles
-them into `web/guide.js`. CI rebuilds the bundle and checks that it matches the
-committed output before running the browser tests. Rebuild after editing the source;
-do not edit the generated bundle by hand.
+`web/guide-source.js` imports Three.js, OrbitControls and GLTFLoader; esbuild produces
+`web/guide.js`. CI rebuilds it and checks the committed output. The public preview
+uses the same asset with demo readings and printer commands disabled.
 
-The native Laya architecture comparison ranked the single-application option first
-but abstained at low confidence. The implementation follows the user's preference
-and the existing deployment model; this was not treated as model approval.
+## Attribution and license
 
-## License and instructional overlays
+Monolith Gantry is by **CloakedWayne and Monolith contributors**. The source and
+derived display asset retain **CC BY-NC-SA 4.0**, separately from Chordata's code
+license. The conversion selects one configuration, omits its alternate X-rail branch,
+tessellates the geometry and recenters it. Preserve this attribution and license
+when redistributing the model. The full [source license](licenses/monolith-CC-BY-NC-SA-4.0.txt)
+is included. Three.js retains its [MIT license](licenses/three-MIT.txt).
 
-The source Voron design and derived model are distributed under GPL-3.0; the exact
-upstream source revision and its license remain linked in the manifest and viewer.
-The conversion code is included so the display mesh can be regenerated from source.
-Three.js uses the [MIT license](licenses/three-MIT.txt), preserved in the bundle
-and provided in full here. Chordata remains GPL-3.0-or-later.
-
-The green accelerometer board/screws and slowed belt-wave animation are instructional
-overlays. They are not represented as source CAD parts or a measured physical
-simulation. Actual mounts and the documented measurement span can differ by build.
-The guide sends no printer commands and does not choose a universal tension target.
+Laya was consulted about selecting the existing complete assembly rather than
+rebuilding R1 from modules. It ranked the existing assembly first but abstained
+below the confidence threshold; source selection was checked independently.

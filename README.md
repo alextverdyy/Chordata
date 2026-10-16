@@ -22,14 +22,14 @@ Start with the **[illustrated user guide](docs/USER_GUIDE.md)** for a complete w
 or the **[troubleshooting guide](docs/TROUBLESHOOTING.md)** if setup or measurement fails.
 
 The page includes [sampling integrity and repeatability checks](docs/MEASUREMENT_RELIABILITY.md),
-a measured live sensor spectrum and a [Voron Trident interactive 3D guide](docs/TRIDENT_GUIDE.md)
-using the official CAD assembly, bundled locally with Three.js.
+a measured live sensor spectrum and a [Monolith Trident gantry guide](docs/TRIDENT_GUIDE.md)
+using the repository’s existing R0 Trident gantry CAD, bundled locally with Three.js.
 The synthetic before/after benchmark rejects a dropped-sample recording that
 previously returned the wrong frequency; hardware accuracy remains uncalibrated.
 
 ## Preview without a printer
 
-[Open the hosted demo and Trident CAD guide](https://alextverdyy.github.io/Chordata/?demo&guide).
+[Open the hosted demo and Trident CAD guide](https://alextverdyy.github.io/Chordata/?demo&guide&v=monolith-r0).
 The hosted build always uses illustrative readings and disables printer commands.
 
 From this checkout:
@@ -42,9 +42,9 @@ Open <http://127.0.0.1:8765/?demo>. The page uses illustrative data and disables
 printer commands and network connections to Moonraker or an AI service. You can
 also open `web/index.html?demo` through a local web server.
 
-Add `&guide` to open the CAD tutorial. Orbit the assembly, isolate belt groups,
-and step through sensor mounting, recording and comparison. The animated sensor
-and belt motion are instructional overlays; they do not simulate measured tension.
+Add `&guide` to open the CAD tutorial. Orbit the gantry, select source parts, isolate belts,
+and step through sensor mounting, recording and comparison. The slowed belt motion is an instructional overlay; it does not simulate measured
+tension. The source gantry has no toolhead or sensor mount.
 
 ## Requirements
 

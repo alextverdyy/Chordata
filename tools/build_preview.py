@@ -15,7 +15,7 @@ def build(output):
         raise ValueError("Demo mode declaration changed; review the preview builder")
     # Keep the public artifact in demo mode even without a query string.
     (output / "index.html").write_text(page.replace(mode, "const demo = true;"))
-    for name in ("guide.js", "spectrum.js", "trident.glb", "trident.provenance.json"):
+    for name in ("guide.js", "spectrum.js", "monolith-gantry.glb", "monolith-gantry.provenance.json"):
         shutil.copyfile(ROOT / "web" / name, output / name)
     shutil.copytree(ROOT / "docs/licenses", output / "licenses", dirs_exist_ok=True)
     (output / ".nojekyll").touch()

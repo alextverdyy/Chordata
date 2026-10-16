@@ -973,7 +973,7 @@ function initReview() {
 
 function loadLocalFeature(file, onload) {
   const script=document.createElement('script');
-  script.src=location.pathname.startsWith('/server/chordata')?'/server/chordata/'+file:file;
+  script.src=(location.pathname.startsWith('/server/chordata')?'/server/chordata/'+file:file)+'?v=monolith-r0';
   script.onload=onload;
   script.onerror=()=>{if(file==='guide.js')$('guideApp').textContent='The interactive guide could not load. The written How it works steps remain available.';};
   document.head.appendChild(script);

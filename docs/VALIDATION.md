@@ -108,9 +108,10 @@ ring-object regression cases were added. After integration, 44 Python tests, all
 
 ## Follow-up: sampling reliability, spectrum and CAD tutorial
 
-The follow-up branch `feature/reliable-spectrum-guide` adds deterministic input
+The initial follow-up branch `feature/reliable-spectrum-guide` added deterministic input
 integrity and completion checks, a measured recent-window spectrum, and an actual
-official Trident CAD viewer with bundled Three.js. The earlier PR remains a separate
+official Trident CAD viewer with bundled Three.js. That full-printer CAD was later
+replaced by the Monolith gantry recorded below. The earlier PR remains a separate
 change. See [measurement methods and before/after evidence](MEASUREMENT_RELIABILITY.md)
 and [CAD source/conversion](TRIDENT_CAD.md).
 
@@ -152,3 +153,39 @@ next-validation choice confidence 0.0143, calibrated-accuracy boolean confidence
 0.5951. This inconclusive advice does not replace tests or physical validation.
 No live Jev provider call was made. Real printer recordings, calibrated frequency
 comparison and performance on the intended printer host remain unverified.
+
+
+## CAD correction: Monolith gantry only
+
+The user requested the plain Monolith Trident gantry, not a full stock printer.
+The viewer now uses only the existing `printed VT 6mm 2WD` assembly in Monolith's
+R0/v604 STEP, pinned to `0051697bd2b6c22d557c05ffe8e4b5e43c90490e`.
+The full-printer GLB and synthetic sensor geometry were removed.
+
+Independent source analysis counted 246 geometric bodies, including bodies attached
+to nonleaf rail and extrusion products. The converter retains these own-body `SOLID`
+components and selects the MGN12H X-rail configuration. Only the 10-body alternative
+MGN9H X-rail branch is omitted; the Y-axis MGN9H parts remain.
+
+The independent reviewer verified the actual GLB: 236 meshes, 558,142 triangles,
+9,238,092 bytes, matching checksum and vertex bounds. Dimensions are 410 × 124 ×
+412.7 mm. Seven retained own-body components cover four extrusions and three rails.
+Both belts and both rear tensioners are present. Source part paths stay within the
+selected assembly. The asset retains Monolith's CC BY-NC-SA 4.0 license separately
+from the application code.
+
+All 65 Python tests and all four browser suites passed after the replacement.
+Browser checks load the new GLB in WebGL 2, exercise the controls and belt animation,
+confirm no invented sensor animation, and cover mobile layout and graphics fallback.
+A separate subagent also loaded the actual model in Chromium, inspected the bare
+gantry screenshot and found no blocking defect. Updated desktop/mobile documentation
+screenshots were inspected. The design detector reported only the existing numeric
+line-height warning. Source compilation and whitespace checks passed.
+
+Laya's source choice ranked the existing complete VT assembly above reconstructing
+R1 modules, but abstained at confidence 0.0907. Its final summary-based scope check
+returned `matches_gantry_only_request=true`; it also recommended physical validation
+for CAD display, which was not treated as a display requirement. Geometry and source
+identity were checked with the actual files and independent browser inspection,
+not inferred from these advisory answers. Measurement calibration still needs real
+printer recordings, as documented above.
