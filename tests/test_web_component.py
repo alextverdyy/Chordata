@@ -73,10 +73,16 @@ class ComponentTests(unittest.IsolatedAsyncioTestCase):
         self.component.http.fetch.assert_not_awaited()
         self.server.klippy.query_objects.assert_not_awaited()
     async def test_routes_protect_settings_and_evaluation(self):
-        protected = [route for name, route in self.server.routes.items() if name != '/server/chordata']
+        protected = [route for name, route in self.server.routes.items() if name in ('/access/chordata_ai', '/server/chordata/evaluate')]
         self.assertEqual(len(protected), 2)
         self.assertTrue(all(route['auth_required'] for route in protected))
         self.assertTrue(any(name.startswith('/access/') for name in self.server.routes))
+    async def test_static_feature_routes_are_public_and_fixed(self):
+        self.assertEqual(set(self.component.assets), {'/server/chordata/guide.js', '/server/chordata/spectrum.js', '/server/chordata/trident.glb'})
+        for route in self.component.assets:
+            self.assertFalse(self.server.routes[route]['auth_required'])
+        self.assertNotIn('/server/chordata/settings.json', self.component.assets)
+
     async def test_configuration_is_private_and_never_returns_key(self):
         request = SimpleNamespace(get_args=lambda: dict(action='configure', enabled=True, endpoint='https://inference.example/predict', api_key='private-secret'))
         public = await self.component._handle_ai(request)
@@ -151,6 +157,11 @@ class SettingsTests(unittest.TestCase):
         sample = status()
         sample['belts']['heard'] = ['A']
         self.assertEqual(web.decode_review(reply(), .7, web.measurement_summary(sample))['status'], 'abstained')
+    def test_provider_cannot_bypass_repeatability_quality(self):
+        sample = status()
+        sample['belts']['A']['quality'] = {'usable': False}
+        self.assertEqual(web.decode_review(reply(), .7, web.measurement_summary(sample))['status'], 'abstained')
+
     def test_low_confidence_abstains(self):
         self.assertEqual(web.decode_review(reply(confidence=.4), .7, web.measurement_summary(status()))['status'], 'abstained')
 

@@ -25,5 +25,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
+      - run: npm run build:guide
+      - run: git diff --exit-code -- web/guide.js
       - run: npx playwright install --with-deps chromium
       - run: npm test

@@ -21,6 +21,12 @@ or replace the signal-processing result. No AI service is needed to measure belt
 Start with the **[illustrated user guide](docs/USER_GUIDE.md)** for a complete walkthrough,
 or the **[troubleshooting guide](docs/TROUBLESHOOTING.md)** if setup or measurement fails.
 
+The page includes [sampling integrity and repeatability checks](docs/MEASUREMENT_RELIABILITY.md),
+a measured live sensor spectrum and a [Voron Trident interactive 3D guide](docs/TRIDENT_GUIDE.md)
+using the official CAD assembly, bundled locally with Three.js.
+The synthetic before/after benchmark rejects a dropped-sample recording that
+previously returned the wrong frequency; hardware accuracy remains uncalibrated.
+
 ## Preview without a printer
 
 From this checkout:
@@ -32,6 +38,10 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory web
 Open <http://127.0.0.1:8765/?demo>. The page uses illustrative data and disables
 printer commands and network connections to Moonraker or an AI service. You can
 also open `web/index.html?demo` through a local web server.
+
+Add `&guide` to open the CAD tutorial. Orbit the assembly, isolate belt groups,
+and step through sensor mounting, recording and comparison. The animated sensor
+and belt motion are instructional overlays; they do not simulate measured tension.
 
 ## Requirements
 
@@ -80,9 +90,9 @@ the [migration instructions](docs/USER_GUIDE.md#migrate-an-existing-upstream-ins
    counted and rejected plucks before adjusting anything.
 5. Adjust manually using the frequency comparison, then measure **both** belts again.
 
-Completion requires five accepted plucks per belt and an average within the
-configured tolerance (default 0.25 Hz). Spread and standard deviation describe
-repeatability; they are not calibrated measurement uncertainty. A new attempt
+Completion requires five accepted plucks per belt and the unrounded mean plus its
+between-pluck repeatability interval within the configured tolerance (default 0.25 Hz).
+The interval describes repeatability; it is not calibrated measurement uncertainty. A new attempt
 invalidates the previous result for that belt immediately. Recording failures clear
 completion rather than leaving a stale success visible.
 

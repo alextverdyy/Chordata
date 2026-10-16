@@ -15,6 +15,16 @@ try { if (localStorage.getItem("chordata_theme") === "light") document.documentE
   --primary-soft: rgba(33,150,243,.16); --ok: #4caf50; --warn: #ffb300; --err: #ef5350;
   --err-soft: rgba(239,83,80,.14); --radius: 12px;
 }
+.spectrum { display:block;width:100%;height:auto;margin:16px 0 6px; }
+.spectrum text { fill:var(--muted);font:16px system-ui; }
+.quality-row { display:grid;gap:4px;padding:12px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums; }
+.quality-row:last-child { border:0; }
+.quality-row span { font-size:15px; }
+.quality-pass { color:var(--ok); }
+.quality-repeat { color:var(--warn); }
+.spectrum-toolbar { display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0; }
+.spectrum-toolbar p { flex:1 1 190px; }
+::selection { background:var(--primary);color:var(--primary-text); }
 /* Theme follows Mainsail's (or Fluidd's) own setting, dark by default like theirs;
    the OS setting is used only when neither has one. See applyTheme(). */
 :root[data-theme="light"] {
@@ -267,7 +277,7 @@ summary:focus-visible,select:focus-visible { outline:3px solid var(--primary); o
       <p>It is printing. Belt tension can be measured when the print is done.</p>
     </div>
     <button type="button" class="big" id="startBtn">Belt tension
-      <small>Pluck each belt; the accelerometer on the toolhead hears it and tells you which belt to tighten or loosen</small></button>
+      <small>Measure each belt, inspect the signal and compare it with your target</small></button>
     <div class="card lock-note" id="noAccel" hidden>
       <h2>No accelerometer set up</h2>
       <p>Chordata listens to the belts with an accelerometer on the toolhead (an ADXL345 or LIS2DW board,
@@ -285,14 +295,21 @@ summary:focus-visible,select:focus-visible { outline:3px solid var(--primary); o
       <ol class="how">
         <li>Set the target frequency your printer's guide gives.</li>
         <li>Move the toolhead where the guide says (the pad above), and save that spot for next time.</li>
-        <li>Tap the toolhead once: Chordata learns how it rings by itself, so a knock is never taken for a belt.</li>
+        <li>Tap the toolhead once: Chordata learns its ringing to help distinguish knocks from belt plucks.</li>
         <li>Pluck belt A about once a second until 5 good plucks are counted, then belt B.</li>
-        <li>Turn one tensioner a little as advised and measure both again, until both are on target.</li>
+        <li>Inspect repeatability, adjust manually if needed, then measure both belts again.</li>
       </ol>
       <p class="small muted">Which belt you call A doesn't matter: the goal is equal tension. Chordata only
         moves the toolhead when you press a button.</p>
     </details>
   </section>
+<details class="card" id="guidePanel"><summary>Interactive measurement guide</summary><div id="guideApp"><p class="help">Six visual steps explain the setup and pluck workflow. Loading the local 3D guide…</p></div></details>
+<section class="card" id="spectrumPanel"><h2>Sensor spectrum</h2>
+<p class="help">Measured accelerometer response. A belt can appear strongest at twice its fundamental frequency. This is a pluck spectrum, not a swept structural-resonance test.</p>
+<div class="spectrum-toolbar"><p id="spectrumStatus" class="small" role="status">Waiting for a sensor window</p><button id="spectrumFreeze" type="button" aria-pressed="false" disabled>Freeze plot</button><button id="spectrumDownload" type="button" disabled>Export spectrum</button></div>
+<div id="spectrumPlot"><p class="help">Record a belt to see the sensor response against frequency.</p></div>
+<p class="help">Solid blue: response · Dashed gray: background where available · Amber: target F and 2F. Vertical axis: dB relative to this window peak, not calibrated SPL or force.</p><p id="spectrumMeta" class="small muted"></p><p id="spectrumPeak" class="help"></p></section>
+<section class="card" id="qualityPanel" hidden><h2>Measurement reliability</h2><div id="qualityRows"></div><p class="help">The interval estimates repeatability of the mean across accepted plucks. It excludes sensor calibration, clock error, mounting and measurement-position bias.</p></section>
 <section class="card" id="measurePanel" hidden><h2>Pluck measurements</h2>
 <p class="help">Frequency is measured in Hz. Force requires belt mass and span length. Use your printer manufacturer's target and measurement position.</p>
 <div id="trend"></div><p class="small muted">Circles: counted · Crosses: rejected · Dashed line: target. Updates after each detected pluck; not a raw accelerometer waveform.</p>
@@ -744,6 +761,14 @@ function countText(r, need) {
   const heard = r.heard || (r.plucks || []).length, out = heard - r.used;
   return Math.min(r.used, need || heard) + " of " + (need || heard) + " counted" + (out > 0 ? " (" + out + " left out)" : "");
 }
+function resultOnTarget(result, b) {
+  if(!result)return false;
+  const estimate=Number.isFinite(result.freq_estimate)?result.freq_estimate:result.freq;
+  if(!Number.isFinite(estimate)||!Number.isFinite(result.used)||result.used<(b.plucks||5))return false;
+  const quality=result.quality;
+  const margin=quality&&quality.repeatability?quality.repeatability.ci95_half_width_hz:0;
+  return (!quality||quality.usable===true)&&Number.isFinite(margin)&&margin>=0&&Math.abs(estimate-b.target)+margin<=(b.tol||.25);
+}
 function renderBelts() {
   const b = pt().belts || {};
   const on = !!prompt && /^Chordata - (belt|pluck|tap)/i.test(prompt.title || "") && !!b.target;
@@ -798,10 +823,11 @@ function renderBelts() {
     t.appendChild(el("div", { class: "name" }, "Belt " + k));
     t.appendChild(el("div", { class: "hz" }, r && r.freq != null ? fmtHz(r.freq) + " Hz" : "--"));
     if (r && r.freq != null) {
-      const d = r.freq - b.target, tol = b.tol || 0.25;
+      const estimate=Number.isFinite(r.freq_estimate)?r.freq_estimate:r.freq;
+      const d = estimate - b.target, tol = b.tol || 0.25;
       const cls = Math.abs(d) <= tol ? "good" : (Math.abs(d) <= 2 ? "near" : "far");
-      const good = Math.abs(d) <= tol && r.used >= (b.plucks || 5);
-      t.appendChild(el("div", { class: "d " + cls }, Math.abs(d) <= tol ? (good ? "Belt good" : "on target")
+      const good = resultOnTarget(r,b);
+      t.appendChild(el("div", { class: "d " + cls }, Math.abs(d) <= tol ? (good ? "Belt good" : "Mean on target · repeat to confirm")
         : (d < 0 ? "-" : "+") + Math.abs(d).toFixed(1) + " Hz, " + (d < 0 ? "tighten" : "loosen")));
       t.appendChild(el("div", { class: "n" }, countText(r, b.plucks)));
     }
@@ -898,6 +924,7 @@ function render() {
   if (!prompt) renderHome();
   renderPrompt();
   renderMeasurements();
+  if(window.ChordataSpectrum)window.ChordataSpectrum.render(pt(),{demo,connected,klippyState});
 }
 
 function measurementRows() {
@@ -944,12 +971,23 @@ function initReview() {
   $('aiReview').onclick=async()=>{ $('aiReview').disabled=true; const signature=measurementSignature(); reviewedSignature=signature; $('aiStatus').textContent='Reviewing measurements…'; try { const r=await rpc('server.chordata.evaluate'); if(signature!==measurementSignature()) { $('aiStatus').textContent='Measurements changed during review. Request a new review.'; return; } $('aiStatus').textContent=r.status==='ok'?'Advice: '+String(r.decision).replace(/_/g,' ')+(Number.isFinite(r.confidence)?' (confidence '+Math.round(r.confidence*100)+'%). ':'. ')+(r.message || ''):r.message || 'No advice returned: '+r.status; } catch(err) { $('aiStatus').textContent='Review unavailable: '+errText(err); } finally { $('aiReview').disabled=false; } };
 }
 
+function loadLocalFeature(file, onload) {
+  const script=document.createElement('script');
+  script.src=location.pathname.startsWith('/server/chordata')?'/server/chordata/'+file:file;
+  script.onload=onload;
+  script.onerror=()=>{if(file==='guide.js')$('guideApp').textContent='The interactive guide could not load. The written How it works steps remain available.';};
+  document.head.appendChild(script);
+}
 function init() {
   initReview();
+  loadLocalFeature('spectrum.js',render);
+  loadLocalFeature('guide.js',()=>{if(new URLSearchParams(location.search).has('guide'))$('guidePanel').open=true;});
   $("startBtn").onclick = () => runGcode("CHORDATA").catch(() => {});
   render();
   if (demo) {
     S.chordata={state:"idle",belts:{target:110,plucks:3,A:{freq:109.9,used:3,heard:4,plucks:[{freq:109.5,ok:true},{freq:110.2,ok:true},{freq:145,ok:false,why:"Off target"},{freq:110,ok:true}]},B:{freq:106.8,used:3,heard:3,plucks:[{freq:107,ok:true},{freq:106.5,ok:true},{freq:107.1,ok:true}]}},tools:{}};
+    const demoF=Array.from({length:241},(_,i)=>20+2*i);
+    S.chordata.belt_spectrum={frequencies_hz:demoF,power_db:demoF.map(f=>Math.max(-75,-64+62*Math.exp(-Math.pow((f-110)/5,2))+64*Math.exp(-Math.pow((f-220)/5,2)))),window_seconds:1,sample_rate_hz:3200,resolution_hz:1,sample_count:3200};
     prompt={title:"Chordata - belt results",items:[],footer:[]}; promptSeq++; render();
     $("connBanner").textContent="Demo · illustrative data · printer commands disabled";
     $("aiForm").hidden=true; $("authForm").hidden=true;

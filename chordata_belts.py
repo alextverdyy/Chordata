@@ -441,6 +441,29 @@ def _steady(axes, fs, n, nfft):
     return np.where(hi > 2.0 * lo, np.minimum(lo, floor), lo)
 
 
+def _sample_timing(t):
+    """Check the clock before treating samples as an evenly spaced FFT input.
+
+    A missing sample is not silence. Do not compress gaps or average them into the
+    sample rate. Bounded timestamp jitter can be interpolated onto a uniform grid;
+    larger irregularity requires another capture. These are input-integrity limits,
+    not a calibration of the accelerometer clock.
+    """
+    delta = np.diff(t)
+    if not np.all(delta > 0):
+        raise ValueError("recording timestamps must increase strictly")
+    nominal = float(np.median(delta))
+    if float(delta.max()) > 1.5 * nominal:
+        raise ValueError("recording has a sample gap; check the accelerometer connection and capture again")
+    jitter = float(np.max(np.abs(delta - nominal)) / nominal)
+    if jitter > 0.20:
+        raise ValueError("recording sample timing is irregular; check the sensor clock and capture again")
+    fs = (len(t) - 1) / float(t[-1] - t[0])
+    grid = np.linspace(t[0], t[-1], len(t))
+    resample = bool(np.max(np.abs(t - grid)) * fs > 1e-4)
+    return fs, grid, {"max_interval_jitter_fraction": jitter, "resampled": resample}
+
+
 def _setup(t, ax, ay, az, quiet):
     t = np.asarray(t, float)
     axes = [np.asarray(a, float) for a in (ax, ay, az)]
@@ -452,11 +475,33 @@ def _setup(t, ax, ay, az, quiet):
         raise ValueError("recording timestamps must increase strictly")
     if len(t) < 100:
         return None
-    fs = (len(t) - 1) / (t[-1] - t[0])
+    fs, grid, timing = _sample_timing(t)
     if fs <= 2 * SEARCH[0] / 0.45:
         raise ValueError("accelerometer sample rate is too low for belt analysis")
+    if timing["resampled"]:
+        axes = [np.interp(grid, t, a) for a in axes]
     q = None
     if quiet is not None:
+        if isinstance(quiet, dict):
+            # Timestamped background from the same sensor: reject dropouts there
+            # too, rather than use a compromised noise reference to accept plucks.
+            try:
+                qt, qa = quiet["time"], quiet["axes"]
+                if len(qa) != 3:
+                    raise ValueError("quiet recording must contain three acceleration arrays")
+                background = _setup(qt, *qa, quiet=None)
+            except (KeyError, TypeError, ValueError) as error:
+                raise ValueError("invalid quiet recording: %s" % error) from error
+            if background is None:
+                raise ValueError("quiet recording is too short")
+            qa, qfs, _, _ = background
+            if abs(qfs / fs - 1.) > .01:
+                raise ValueError("quiet recording sample rate differs from the measurement")
+            # Give the noise FFT the same physical rate even across small clock
+            # updates between captures. No extrapolation beyond the quiet capture.
+            qt = np.arange(len(qa[0])) / qfs
+            grid = np.arange(int(qt[-1] * fs) + 1) / fs
+            quiet = [np.interp(grid, qt, a) for a in qa]
         if len(quiet) != 3:
             raise ValueError("quiet recording must contain three acceleration arrays")
         qa = [np.asarray(a, float) for a in quiet]
@@ -464,7 +509,76 @@ def _setup(t, ax, ay, az, quiet):
             raise ValueError("quiet recording contains invalid acceleration samples")
         if len(qa[0]) > int(0.5 * fs):
             q = qa
-    return axes, fs, q
+    return axes, fs, q, timing
+
+
+def live_spectrum(t, ax, ay, az, quiet=None, max_points=256):
+    """Latest 0.8 s of measured XYZ power, Hann window, 25–500 Hz.
+
+    Frequencies are native FFT bins, grouped by retaining each group's maximum
+    so narrow peaks survive the display bound. dB is relative to this window's
+    peak, not a calibrated PSD or belt force. The quiet reference uses the same
+    window length and normalization; quiet axes must share the capture's rate.
+    """
+    if isinstance(max_points, bool) or not isinstance(max_points, (int, np.integer)) or not 2 <= max_points <= 256:
+        raise ValueError("spectrum max_points must be an integer from 2 to 256")
+    st = _setup(t, ax, ay, az, quiet)
+    if st is None:
+        return None
+    axes, fs, q, _ = st
+    n = min(len(axes[0]), int(0.8 * fs))
+    if n < 100:
+        return None
+    f, power = _spectrum([a[-n:] for a in axes], fs, n)
+    if not np.isfinite(power).all():
+        raise ValueError("accelerometer spectrum exceeds the supported numeric range")
+    keep = np.flatnonzero((f >= SEARCH[0]) & (f <= min(SEARCH[1], 0.45 * fs)))
+    if not len(keep):
+        return None
+    noise = _background(q, fs, n, n, 50) if q is not None and len(q[0]) >= n else None
+    if noise is not None and not np.isfinite(noise).all():
+        raise ValueError("quiet spectrum exceeds the supported numeric range")
+    peak = float(np.max(power[keep]))
+    ref = max(peak, 1e-30)
+    # Peak-preserving decimation: emit a real bin and its corresponding noise.
+    groups = np.array_split(keep, min(max_points, len(keep)))
+    idx = np.array([g[int(np.argmax(power[g]))] for g in groups])
+    def db(values):
+        if peak <= 1e-30:
+            return [-100.] * len(values)
+        return np.maximum(-100., 10. * np.log10(np.maximum(values, 1e-30) / ref)).tolist()
+    result = {"frequencies_hz": f[idx].tolist(), "power_db": db(power[idx]),
+              "window_seconds": n / fs, "sample_rate_hz": float(fs),
+              "resolution_hz": fs / n, "sample_count": n,
+              "source": "accelerometer", "normalization": "relative_peak",
+              "signal_present": peak > 1e-30}
+    if noise is not None:
+        result["noise_db"] = db(noise[idx])
+    return result
+
+
+def _repeatability(frequencies):
+    """Student-t interval for repeated plucks, not absolute measurement accuracy.
+
+    Assumes independent readings with roughly normal random variation. Shared
+    errors (wrong span, clock, mounting) are absent from this interval.
+    """
+    n = len(frequencies)
+    if not n:
+        return {"count": 0, "mean_hz": None, "stddev_hz": None, "spread_hz": None,
+                "ci95_hz": None, "ci95_half_width_hz": None}
+    mean = float(np.mean(frequencies))
+    std = float(np.std(frequencies, ddof=1)) if n > 1 else None
+    # Two-sided .975 quantiles, df=1..30; df>=30 uses conservative df=30.
+    critical = (12.706, 4.303, 3.182, 2.776, 2.571, 2.447, 2.365, 2.306,
+                2.262, 2.228, 2.201, 2.179, 2.160, 2.145, 2.131, 2.120,
+                2.110, 2.101, 2.093, 2.086, 2.080, 2.074, 2.069, 2.064,
+                2.060, 2.056, 2.052, 2.048, 2.045, 2.042)
+    half = critical[min(n - 2, 29)] * std / math.sqrt(n) if n > 1 else None
+    return {"count": n, "mean_hz": mean, "stddev_hz": std,
+            "spread_hz": float(max(frequencies) - min(frequencies)),
+            "ci95_hz": [mean - half, mean + half] if half is not None else None,
+            "ci95_half_width_hz": half}
 
 
 def _spectra(axes, q, fs, nfft, f, mask, a0, a1, cache):
@@ -524,15 +638,24 @@ def analyse(t, ax, ay, az, target=None, expect=None, quiet=None, avoid=(), other
     metadata = {"sample_count": len(t), "sample_rate": None, "duration": 0.0}
 
     def out(verdict, note, plucks=(), freq=None, used=0):
-        frequencies = [p["freq"] for p in plucks if p["ok"] and p["freq"] is not None]
+        frequencies = [p["freq_estimate"] for p in plucks if p["ok"] and p["freq"] is not None]
+        repeatability = _repeatability(frequencies)
+        reasons = [] if verdict == "good" else [note]
+        if expect is not None and used < expect:
+            reasons.append("%d accepted plucks required; %d available" % (expect, used))
         return {"freq": freq, "plucks": list(plucks), "used": used, "heard": len(plucks),
                 "verdict": verdict, "note": note, "metadata": dict(metadata),
+                "freq_estimate": repeatability["mean_hz"] if freq is not None else None,
+                "quality": {"usable": verdict == "good" and not reasons,
+                            "reasons": reasons, "repeatability": repeatability,
+                            "interval_scope": "between_pluck_repeatability_only"},
                 "spread": round(max(frequencies) - min(frequencies), 3) if frequencies else None,
                 "stddev": round(float(np.std(frequencies)), 3) if frequencies else None}
     if st is None:
         return out("none", "no data from the accelerometer")
-    axes, fs, q = st
-    metadata.update(sample_rate=round(float(fs), 3), duration=round(float(t[-1] - t[0]), 3))
+    axes, fs, q, timing = st
+    metadata.update(sample_rate=round(float(fs), 3), duration=round(float(t[-1] - t[0]), 3),
+                    timing=timing)
     lo, hi = SEARCH[0], min(SEARCH[1], 0.45 * fs / 2.0)
     mask = steady_lines(q, fs) if q is not None else None
     base = float(np.median(_band(q, fs, lo, hi, mask))) if q is not None else None
@@ -562,6 +685,7 @@ def analyse(t, ax, ay, az, target=None, expect=None, quiet=None, avoid=(), other
         p, nz, halves = sp
         fr, d1, d2 = pluck_freq(f, p, nz, df, lo, hi, avoid, target, prev, halves)
         pk = {"t": round(float(on / fs), 2), "freq": None if fr is None else round(fr, 2),
+              "freq_estimate": None if fr is None else float(fr),
               "db": None if d1 is None else round(d1, 1), "db2": None if d2 is None else round(d2, 1),
               "ok": False, "why": ""}
         if fr is not None and mask is not None and bool(mask(np.array([2 * fr]))[0]):
@@ -587,9 +711,9 @@ def analyse(t, ax, ay, az, target=None, expect=None, quiet=None, avoid=(), other
         plucks.append(pk)
     ok = [x for x in plucks if x["ok"]]
     if other and ok:
-        med = float(np.median([x["freq"] for x in ok]))
+        med = float(np.median([x["freq_estimate"] for x in ok]))
         for x in ok:
-            if abs(x["freq"] - other) <= OTHER_GUARD and abs(x["freq"] - med) > 1.5:
+            if abs(x["freq_estimate"] - other) <= OTHER_GUARD and abs(x["freq_estimate"] - med) > 1.5:
                 x["ok"], x["why"] = False, "the other belt was ringing along"
         ok = [x for x in plucks if x["ok"]]
     if not plucks:
@@ -598,12 +722,12 @@ def analyse(t, ax, ay, az, target=None, expect=None, quiet=None, avoid=(), other
         return out("again", "%d of %d plucks clear" % (len(ok), len(plucks)), plucks, used=len(ok))
     # plucks far from the rest rang on another stretch of belt: left out if most agree,
     # else no reading
-    fr = [x["freq"] for x in ok]
+    fr = [x["freq_estimate"] for x in ok]
     cl = _clusters(fr)
     c, mem = cl[0]
     if len(mem) >= MIN_GOOD and 2 * len(mem) > len(fr):
         for x in ok:
-            if abs(x["freq"] - c) > SPAN * c:
+            if abs(x["freq_estimate"] - c) > SPAN * c:
                 x["ok"], x["why"] = False, "rang at %.1f Hz instead of %.1f Hz" % (x["freq"], c)
         ok = [x for x in ok if x["ok"]]
     elif max(fr) - min(fr) > SPAN * float(np.median(fr)):
@@ -612,9 +736,9 @@ def analyse(t, ax, ay, az, target=None, expect=None, quiet=None, avoid=(), other
     # the rest must agree within SPREAD; one stray among agreeing ones is thrown out
     stray = False
     while True:
-        fr = [x["freq"] for x in ok]
+        fr = [x["freq_estimate"] for x in ok]
         med = float(np.median(fr))
-        far = [x for x in ok if abs(x["freq"] - med) > SPREAD]
+        far = [x for x in ok if abs(x["freq_estimate"] - med) > SPREAD]
         if not far:
             break
         if stray or len(far) > 1 or len(ok) - 1 < MIN_GOOD:
@@ -628,7 +752,7 @@ def analyse(t, ax, ay, az, target=None, expect=None, quiet=None, avoid=(), other
         for x in ok[expect:]:
             x["ok"], x["why"] = False, "more than needed"
         ok = ok[:expect]
-        fr = [x["freq"] for x in ok]
+        fr = [x["freq_estimate"] for x in ok]
     return out("good", "%d of %d plucks counted" % (len(ok), len(plucks)), plucks,
                freq=round(float(np.mean(fr)), 1), used=len(ok))
 
@@ -661,7 +785,7 @@ def analyse_tap(t, ax, ay, az, quiet=None):
     st = _setup(t, ax, ay, az, quiet)
     if st is None:
         return {"modes": [], "ring": [], "tau": None, "note": "no data from the accelerometer"}
-    axes, fs, q = st
+    axes, fs, q, _ = st
     lo, hi = SEARCH[0], min(SEARCH[1], 0.45 * fs)
     onsets = find_plucks(axes, fs, lo, hi, None, None)
     if not onsets:
@@ -734,20 +858,29 @@ def plan(b):
     Just which way, and one belt per round, taking turns, so the two are brought up
     together and never end far apart."""
     tgt, tol = b["target"], b["tol"]
-    fa = (b.get("A") or {}).get("freq")
-    fb = (b.get("B") or {}).get("freq")
+    fa = (b.get("A") or {}).get("freq_estimate", (b.get("A") or {}).get("freq"))
+    fb = (b.get("B") or {}).get("freq_estimate", (b.get("B") or {}).get("freq"))
     upd = {}
     if fa is None or fb is None:
         return "", upd
     need = b.get("plucks", 5)
-    good = {k: abs(f - tgt) <= tol and ((b.get(k) or {}).get("used") or 0) >= need
-            for k, f in (("A", fa), ("B", fb))}
+    def sufficient(k, f):
+        result = b.get(k) or {}
+        quality = result.get("quality")
+        # Old saved results lack quality diagnostics; preserve their public API.
+        margin = ((quality or {}).get("repeatability") or {}).get("ci95_half_width_hz", 0.)
+        return (abs(f - tgt) + (margin if margin is not None else float("inf")) <= tol
+                and (result.get("used") or 0) >= need
+                and (quality is None or quality.get("usable", False)))
+    good = {k: sufficient(k, f) for k, f in (("A", fa), ("B", fb))}
     upd["belt_good"] = good
     upd["done"] = good["A"] and good["B"]
     if upd["done"]:
         return "Both belts good. Done.", upd
     off = [k for k, f in (("A", fa), ("B", fb)) if abs(f - tgt) > tol]
     if not off:
+        if all(((b.get(k) or {}).get("used") or 0) >= need for k in ("A", "B")):
+            return "Mean frequencies are on target, but repeatability crosses the tolerance: measure both again", upd
         return "On target, but not from %d good plucks each: measure both again" % need, upd
     last = b.get("last_belt")
     # take turns: the belt not changed last, if it still needs it

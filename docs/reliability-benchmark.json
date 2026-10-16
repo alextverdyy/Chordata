@@ -1,0 +1,80 @@
+{
+  "baseline_revision": "12c6a30566f1668875063da5ec0b338b0d4c0b11",
+  "seed": 917,
+  "sample_rate_hz": 3200.0,
+  "reference_hz": 91.0,
+  "measurements": {
+    "uniform_91_hz": {
+      "before": {
+        "accepted": true,
+        "estimate_hz": 91.0,
+        "display_hz": 91.0,
+        "used": 5
+      },
+      "after": {
+        "accepted": true,
+        "estimate_hz": 90.99986093329298,
+        "display_hz": 91.0,
+        "used": 5
+      }
+    },
+    "100ms_missing_samples": {
+      "before": {
+        "accepted": true,
+        "estimate_hz": 89.9,
+        "display_hz": 89.9,
+        "used": 5
+      },
+      "after": {
+        "accepted": false,
+        "rejected": "recording has a sample gap; check the accelerometer connection and capture again"
+      }
+    },
+    "bounded_timestamp_jitter": {
+      "before": {
+        "accepted": true,
+        "estimate_hz": 91.0,
+        "display_hz": 91.0,
+        "used": 5
+      },
+      "after": {
+        "accepted": true,
+        "estimate_hz": 90.99985639854626,
+        "display_hz": 91.0,
+        "used": 5
+      }
+    }
+  },
+  "completion": {
+    "stable_center": {
+      "before": {
+        "done": true,
+        "advice": "Both belts good. Done."
+      },
+      "after": {
+        "done": true,
+        "advice": "Both belts good. Done."
+      }
+    },
+    "variable_center": {
+      "before": {
+        "done": true,
+        "advice": "Both belts good. Done."
+      },
+      "after": {
+        "done": false,
+        "advice": "Mean frequencies are on target, but repeatability crosses the tolerance: measure both again"
+      }
+    },
+    "rounded_boundary": {
+      "before": {
+        "done": true,
+        "advice": "Both belts good. Done."
+      },
+      "after": {
+        "done": false,
+        "advice": "Tighten belt A a little: 0.3 Hz low. Then measure both again"
+      }
+    }
+  }
+}

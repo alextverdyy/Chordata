@@ -1,0 +1,2 @@
+# Generated dependency bundle contains upstream GLSL shader string whitespace.
+web/guide.js linguist-generated=true -whitespace

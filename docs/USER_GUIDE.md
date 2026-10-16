@@ -208,8 +208,8 @@ The live chart updates from detected plucks about once a second. It shows freque
 by pluck number, not a continuous accelerometer waveform. A rejected point can
 stretch the chart scale; use the table for exact values.
 
-Completion requires five accepted plucks on each belt and an average within the
-configured tolerance. A partial series can show an average while still needing more
+Completion requires five accepted plucks on each belt and its unrounded mean with
+the between-pluck repeatability interval inside the configured tolerance. A partial series can show an average while still needing more
 readings. Spread and standard deviation in the result data describe repeatability;
 they do not establish sensor accuracy. The UI measures frequency, not force.
 
@@ -242,6 +242,13 @@ CHORDATA_RECORD CHIP=hotend SECONDS=10 NAME=reference
 
 Here `hotend` is an example sensor name, not a required name. Supported recording
 duration is 0.5–30 seconds. The CSV contains time and X/Y/Z acceleration samples.
+
+### Live spectrum and animated instructions
+
+The [sensor spectrum reference](MEASUREMENT_RELIABILITY.md#read-the-sensor-spectrum)
+explains the live response, F/2F markers, freeze and export controls. The
+[Voron Trident guide](TRIDENT_GUIDE.md) explains the interactive 3D model and its
+instructional limits. Add `&guide` to the offline demo URL to open the guide.
 
 ## 7. Enable optional Laya or Jev review
 

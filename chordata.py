@@ -43,6 +43,7 @@ class Chordata:
         self.belt_now = None      # the belt being listened to ("tap" while learning the toolhead)
         self.belt_plucks = 5
         self.belt_live = []       # plucks heard so far while listening
+        self.belt_spectrum = None # latest measured accelerometer response (bounded FFT)
         self.measurement = {"phase": "idle", "belt": None}
         self._tool_info = None
         for name in ("START", "LISTEN", "TAP", "POS"):
@@ -56,7 +57,8 @@ class Chordata:
         return {"state": self.state, "message": self.message, "tools": self._tools(),
                 "belts": self.belts, "belt_target": self.belt_target, "belt_tol": self.belt_tol,
                 "belt_now": self.belt_now if self.belt_now in ("A", "B") else None,
-                "belt_live": self.belt_live, "belt_pos": self._belt_pos(),
+                "belt_live": self.belt_live, "belt_spectrum": getattr(self, "belt_spectrum", None),
+                "belt_pos": self._belt_pos(),
                 "measurement": dict(self.measurement, elapsed=round(max(
                     0., eventtime - self.measurement["started_at"]), 1))
                 if self.measurement.get("phase") in ("background", "listening", "analysing", "recording")
@@ -83,6 +85,7 @@ class Chordata:
     def _begin_measurement(self, belt, expected=None):
         self.state = "listening"
         self.belt_live = []
+        self.belt_spectrum = None
         self.belt_now = None
         self.measurement = {"phase": "background", "belt": belt, "expected": expected,
                             "started_at": self.reactor.monotonic(), "elapsed": 0.,
@@ -99,6 +102,8 @@ class Chordata:
                                 heard=(result or {}).get("heard", 0), result=result,
                                 error=str(error) if error else None)
         self.belt_now = None
+        if getattr(self, "belt_spectrum", None) is not None:
+            self.belt_spectrum = dict(self.belt_spectrum, active=False)
         self.state, self.message = "idle", ""
 
     def _tools(self):
@@ -137,6 +142,7 @@ class Chordata:
                       "tol": self.belt_tol, "tap": [], "tap_ring": [], "tap_tau": None, "fails": {"A": 0, "B": 0}, "deaf": False,
                       "possible": False, "good": {}, "prev": {}}
         self.belt_live = []
+        self.belt_spectrum = None
         self.measurement = {"phase": "idle", "belt": None}
         gcmd.respond_info("Chordata: belt tension, target %.0f Hz, %d plucks per belt" % (target, plucks))
 
@@ -186,7 +192,8 @@ class Chordata:
             self.message = "Pluck belt %s about once a second until %d are counted" % (belt, n)
             if gcmd.get_int("UI", 0):
                 self.gcode.run_script_from_command("_CHORDATA_UI STEP=pluck BELT=%s" % belt)
-            live = dict(quiet=[[s[i] for s in quiet] for i in (1, 2, 3)], expect=n,
+            background = {"time": [s[0] for s in quiet], "axes": [[s[i] for s in quiet] for i in (1, 2, 3)]}
+            live = dict(quiet=background, expect=n,
                         avoid=self.belts.get("tap_ring") or self.belts.get("tap", []), target=self.belts["target"],
                         prev=(self.belts.get("good") or {}).get(belt),
                         other=(self.belts.get("B" if belt == "A" else "A") or {}).get("freq"))
@@ -205,8 +212,9 @@ class Chordata:
         try:
             res = belts.analyse(t, [s[1] for s in samples], [s[2] for s in samples],
                                 [s[3] for s in samples], target=self.belts["target"], expect=n,
-                                quiet=[[s[i] for s in quiet] for i in (1, 2, 3)],
+                                quiet=background,
                                 avoid=self.belts.get("tap_ring") or self.belts.get("tap", []), other=other, prev=good.get(belt))
+            self.belt_spectrum = self._spectrum_snapshot(samples, background, active=False)
         except ValueError as error:
             raise gcmd.error("Chordata: invalid accelerometer recording: %s" % error)
         res["measured_at"] = time.time()
@@ -216,7 +224,7 @@ class Chordata:
         b[belt] = res
         if res["freq"] is not None:
             b["prev"] = dict(b.get("prev") or {}, **({belt: good[belt]} if belt in good else {}))
-            good[belt] = res["freq"]
+            good[belt] = res.get("freq_estimate", res["freq"])
             b["good"] = good
             b["possible"] = True
         # a sensor that can't hear the belts at all: say so instead of guessing
@@ -359,7 +367,8 @@ class Chordata:
         try:
             res = belts.analyse_tap([s[0] for s in samples], [s[1] for s in samples],
                                     [s[2] for s in samples], [s[3] for s in samples],
-                                    quiet=[[s[i] for s in quiet] for i in (1, 2, 3)])
+                                    quiet={"time": [s[0] for s in quiet],
+                                           "axes": [[s[i] for s in quiet] for i in (1, 2, 3)]})
         except ValueError as error:
             raise gcmd.error("Chordata: invalid accelerometer recording: %s" % error)
         b = dict(self.belts)
@@ -379,6 +388,14 @@ class Chordata:
     # ---------------- raw recordings, readable from Mainsail (Kalico's own go to /tmp) ----------------
     REC_KEEP = 40
 
+    def _spectrum_snapshot(self, samples, quiet=None, captured_at=None, active=True):
+        import chordata_belts as belts
+        spectrum = belts.live_spectrum(*[[s[i] for s in samples] for i in range(4)], quiet=quiet)
+        if spectrum is not None:
+            spectrum.update(captured_at=time.time() if captured_at is None else captured_at,
+                            sample_time_seconds=float(samples[-1][0]), active=active)
+        return spectrum
+
     def _record(self, chip, toolhead, secs, live=None):
         """Record for secs. live: analyse() arguments; then the plucks heard so far are
         put in belt_live about once a second while recording (in a thread, so a slow
@@ -391,12 +408,14 @@ class Chordata:
             busy = []
             self._live_gen = gen_now = getattr(self, "_live_gen", 0) + 1
 
-            def work(samples):
+            def work(samples, captured_at):
                 try:
+                    spectrum = self._spectrum_snapshot(samples, live.get("quiet"), captured_at)
                     res = belts.analyse([s[0] for s in samples], [s[1] for s in samples],
                                         [s[2] for s in samples], [s[3] for s in samples], **live)
                     if self.belt_now in ("A", "B") and self._live_gen == gen_now:
                         self.belt_live = res["plucks"]
+                        self.belt_spectrum = spectrum
                         self.measurement = dict(self.measurement, accepted=res["used"],
                                                 heard=res["heard"])
                 except Exception:
@@ -411,7 +430,7 @@ class Chordata:
                                    if s[0] >= client.request_start_time]
                         if len(samples) > 200:
                             busy.append(1)
-                            threading.Thread(target=work, args=(samples,), daemon=True).start()
+                            threading.Thread(target=work, args=(samples, time.time()), daemon=True).start()
                 except Exception:
                     logging.exception("chordata: live belt samples")
                     return self.reactor.NEVER
@@ -441,6 +460,8 @@ class Chordata:
                 if timer is not None:
                     self.reactor.unregister_timer(timer)
                     self._live_gen += 1          # a late live result can't overwrite the final one
+                    if getattr(self, "belt_spectrum", None) is not None:
+                        self.belt_spectrum = dict(self.belt_spectrum, active=False)
         return client.get_samples()
 
     def _find_chip(self, name):

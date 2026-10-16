@@ -102,8 +102,15 @@ def measurement_summary(status):
                 why = p.get("why")
                 why = why if why in reasons else "other rejection"
                 rejected[why] = rejected.get(why, 0) + 1
+        quality = result.get("quality") or {}
+        interval = (quality.get("repeatability") or {}).get("ci95_hz")
+        if not (isinstance(interval, list) and len(interval) == 2 and all(finite(v) for v in interval)):
+            interval = None
+        estimate = result.get("freq_estimate", result.get("freq"))
         out["belts"][belt] = {
-            "frequency_hz": result.get("freq") if finite(result.get("freq")) else None,
+            "frequency_hz": estimate if finite(estimate) else None,
+            "quality_usable": quality.get("usable") if type(quality.get("usable")) is bool else None,
+            "mean_repeatability_interval_hz": interval,
             "accepted": result.get("used") if finite(result.get("used")) else 0,
             "heard": result.get("heard") if finite(result.get("heard")) else 0,
             "measured_at": result.get("measured_at") if finite(result.get("measured_at")) else None,
@@ -125,7 +132,8 @@ def decode_review(payload, threshold, summary):
         raise ValueError("Invalid review response")
     # A model cannot turn an incomplete series into a completed measurement.
     enough = summary["pair_complete"] and all(
-        x["frequency_hz"] is not None and x["accepted"] >= (summary["required_plucks"] or 5)
+        x["frequency_hz"] is not None and x.get("quality_usable") is not False
+        and x["accepted"] >= (summary["required_plucks"] or 5)
         for x in summary["belts"].values())
     abstain = confidence < threshold or answer.get("low_confidence") or (choice == "compare" and not enough)
     return {"status": "abstained" if abstain else "ok", "decision": None if abstain else choice,
@@ -153,11 +161,22 @@ class ChordataWeb:
         self.server.register_endpoint("/server/chordata", RequestType.GET, self._handle_page,
                                       transports=TransportType.HTTP, wrap_result=False,
                                       content_type="text/html; charset=UTF-8", auth_required=False)
+        self.assets = {"/server/chordata/" + name: PAGE.parent / name
+                       for name in ("guide.js", "spectrum.js", "trident.glb")}
+        for endpoint in self.assets:
+            self.server.register_endpoint(endpoint, RequestType.GET, self._handle_asset,
+                transports=TransportType.HTTP, wrap_result=False,
+                content_type=("model/gltf-binary" if endpoint.endswith(".glb")
+                              else "application/javascript; charset=UTF-8"), auth_required=False)
         self.server.register_endpoint("/access/chordata_ai", RequestType.POST, self._handle_ai)
         self.server.register_endpoint("/server/chordata/evaluate", RequestType.POST, self._evaluate)
 
     async def _handle_page(self, web_request):
         return await self.server.get_event_loop().run_in_thread(self.page.read_bytes)
+
+    async def _handle_asset(self, web_request):
+        path = self.assets[web_request.get_endpoint()]
+        return await self.server.get_event_loop().run_in_thread(path.read_bytes)
 
     def public_settings(self):
         return dict({k: v for k, v in self.settings.items() if k != "api_key"},

@@ -2,6 +2,8 @@
 
 Date: 2026-10-16. Checkout: `/home/hermes/Chordata`, based on upstream
 `db24b8602d068108c1da67d5a4acf8ee420480c3`. This records validation of the rewrite before publication to the fork.
+The initial publication record is retained below; the final section records the
+subsequent measurement and CAD changes.
 
 ## Executed
 
@@ -103,3 +105,50 @@ per-mode ring duration, width and guard features. The combined analysis validato
 accepts both plain frequency modes and the new ring objects; valid and invalid
 ring-object regression cases were added. After integration, 44 Python tests, all
 48 synthetic/planner checks, and the Chromium suite passed.
+
+## Follow-up: sampling reliability, spectrum and CAD tutorial
+
+The follow-up branch `feature/reliable-spectrum-guide` adds deterministic input
+integrity and completion checks, a measured recent-window spectrum, and an actual
+official Trident CAD viewer with bundled Three.js. The earlier PR remains a separate
+change. See [measurement methods and before/after evidence](MEASUREMENT_RELIABILITY.md)
+and [CAD source/conversion](TRIDENT_CAD.md).
+
+Independent review added regressions for dropped samples, quiet-reference integrity,
+jitter, exact-frequency tolerance, repeatability, incomplete counts, spectrum bounds,
+recent-window selection, gain normalization and silence. The recorded benchmark
+reproduces the old 91 Hz → 89.9 Hz dropout error and shows rejection after the fix.
+Subagent review also independently matched the source archive's Git blob identity
+to the pinned official repository, and tested nested translation/rotation handling
+in the mesh converter.
+
+Laya was consulted for the architecture and bounded review questions. It ranked the
+single-app architecture highest but abstained at low confidence; the deployment
+choice follows the user's preference and the existing Moonraker companion. Laya
+did not validate physical accuracy. The engineering claims rest on the reproducible
+regressions, source inspection and browser/runtime checks.
+
+### Executed follow-up checks
+
+| Check | Result |
+| --- | --- |
+| Python unit/integration-contract tests | 65 passed on Python 3.12.13 |
+| Existing synthetic signal and planner checks | 48 passed |
+| Browser suites | All four passed: page, spectrum, CAD guide and independent CAD integration |
+| Actual CAD | Official pinned STEP converted; 373,377 triangles, 27 mesh groups, 8,799,064-byte self-contained GLB; source and asset checksum tests passed |
+| Viewer behavior | Real WebGL2 render, local lazy loading, keyboard orbit, camera focus, isolation, x-ray, sensor scrub, hidden pause, reduced motion, context loss and written fallback |
+| Mobile/desktop | Browser layout checks at 390 px and 1100/1280 px; updated spectrum and CAD screenshots visually inspected |
+| Actual isolated Moonraker | JavaScript and GLB returned 200, correct MIME types and matching checksums; unauthenticated settings/review returned 401; trusted disabled review returned without a provider |
+| Shell syntax, Python compilation, whitespace | Passed |
+
+The temporary Moonraker daemon was stopped after the check. No printer service was
+changed. The design detector reported one existing warning about tight line height
+in the large numeric readings; no new finding was reported for the guide or spectrum.
+Whitespace checking excludes the generated Three.js bundle's upstream shader
+strings through `.gitattributes`; CI verifies the bundle by rebuilding it.
+
+A final native Laya evidence review withheld both answers at the 0.7 threshold:
+next-validation choice confidence 0.0143, calibrated-accuracy boolean confidence
+0.5951. This inconclusive advice does not replace tests or physical validation.
+No live Jev provider call was made. Real printer recordings, calibrated frequency
+comparison and performance on the intended printer host remain unverified.

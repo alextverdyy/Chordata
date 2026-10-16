@@ -1,6 +1,13 @@
 {
   "name": "chordata-browser-tests",
   "private": true,
-  "scripts": { "test": "node tests/test_web.cjs" },
-  "devDependencies": { "playwright": "1.64.0" }
+  "scripts": {
+    "test": "node tests/test_web.cjs && node tests/test_spectrum.cjs && node tests/test_guide.cjs && node tests/test_cad_review.cjs",
+    "build:guide": "esbuild web/guide-source.js --bundle --format=iife --minify --legal-comments=inline --outfile=web/guide.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.64.0",
+    "three": "0.186.1"
+  }
 }

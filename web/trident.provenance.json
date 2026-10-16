@@ -1,0 +1,777 @@
+{
+  "source_repository": "https://github.com/VoronDesign/Voron-Trident",
+  "source_revision": "f04f747d4dea06315806f352abf57f767cedf2b4",
+  "source_url": "https://raw.githubusercontent.com/VoronDesign/Voron-Trident/f04f747d4dea06315806f352abf57f767cedf2b4/CAD/trident_assembly.step.zip",
+  "source_zip_sha256": "9fe5a74f77048603e9289bdfcfa0db60b443252b9236ac3ef39821dc2a91209a",
+  "source_step_sha256": "416eda4e9212b894ed6f78ad3a6af55757115ebfcc4c18db933743d97dd48ccf",
+  "source_zip_member": "trident_assembly.step",
+  "license": "GPL-3.0",
+  "license_url": "https://github.com/VoronDesign/Voron-Trident/blob/f04f747d4dea06315806f352abf57f767cedf2b4/LICENSE",
+  "asset": "trident.glb",
+  "asset_sha256": "b04b0403bdc927290f4b5ce43b00c4069d7cb4ee947ce7df5c21f3da964cd566",
+  "asset_bytes": 8799064,
+  "units": "metres",
+  "up_axis": "Y",
+  "source_units": "millimetres",
+  "source_up_axis": "Z",
+  "source_to_asset": {
+    "x": "source_x / 1000",
+    "y": "source_z / 1000",
+    "z": "-source_y / 1000"
+  },
+  "bounds_m": [
+    [
+      -0.40300018453069986,
+      -0.6016160541133204,
+      -0.43533418874216534
+    ],
+    [
+      0.1044005528446475,
+      0.010639582807917334,
+      0.014199545787480873
+    ]
+  ],
+  "triangles": 373377,
+  "meshes": 27,
+  "source_leaf_components": 1414,
+  "triangles_before_simplification": 1699661,
+  "omitted_components": {
+    "ordinary_fasteners": 672,
+    "enclosure_panels_and_electronics": 288
+  },
+  "groups": {
+    "belt_a": {
+      "source_components": 1,
+      "source_paths": [
+        "Trident_Assembly/Gantry/A_Belt"
+      ],
+      "bounds_m": [
+        [
+          -0.37887801031833157,
+          -0.1579500000000302,
+          -0.40037801031827164
+        ],
+        [
+          -0.011121989681689912,
+          -0.15195000000003014,
+          -0.016874163025323703
+        ]
+      ],
+      "center_m": [
+        -0.19500000000001075,
+        -0.15495000000003017,
+        -0.20862608667179766
+      ]
+    },
+    "belt_b": {
+      "source_components": 1,
+      "source_paths": [
+        "Trident_Assembly/Gantry/B_Belt"
+      ],
+      "bounds_m": [
+        [
+          -0.3788780103183153,
+          -0.16804000000117067,
+          -0.4003780103182948
+        ],
+        [
+          -0.01112198968167487,
+          -0.16204000000003635,
+          -0.016874163025329673
+        ]
+      ],
+      "center_m": [
+        -0.1949999999999951,
+        -0.1650400000006035,
+        -0.20862608667181223
+      ]
+    },
+    "tensioner_a": {
+      "source_components": 27,
+      "source_paths": [
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3_Washer__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M5x16_BHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3x8_SHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/PTFE__35mm_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/PTFE__35mm_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3x40_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3x40_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3x16_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3x25_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Hardware__1_/M3x25_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Printed__1_/idler_housing_x2",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Printed__1_/[a]_idler_carrier_a_x2",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Printed__1_/[a]_idler_carrier_b_x2",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Printed__1_/[a]_idler_front_x2",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Motion__1_/Bearing_Stack__2_/M5_1mm_Spacer__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Motion__1_/Bearing_Stack__2_/F695_ZZ__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Motion__1_/Bearing_Stack__2_/F695_ZZ__2_",
+        "Trident_Assembly/Gantry/Front_Idler_A/Front_Idler_A_Motion__1_/Bearing_Stack__2_/M5_1mm_Spacer__2_"
+      ],
+      "bounds_m": [
+        [
+          -0.027167194455733394,
+          -0.1922474396289845,
+          -0.045087797393963895
+        ],
+        [
+          0.010332221068765836,
+          -0.13163395175770218,
+          0.008286623805931181
+        ]
+      ],
+      "center_m": [
+        -0.00841748669348378,
+        -0.16194069569334335,
+        -0.018400586794016356
+      ]
+    },
+    "tensioner_b": {
+      "source_components": 27,
+      "source_paths": [
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3_Washer__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M5x10_BHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M5x16_BHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3x8_SHCS__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3_Heat_Set__3_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/PTFE__35mm_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/PTFE__35mm_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3x40_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3x40_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3x16_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3x25_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Hardware__1_/M3x25_SHCS__1_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Motion__1_/Bearing_Stack__2_/M5_1mm_Spacer__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Motion__1_/Bearing_Stack__2_/F695_ZZ__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Motion__1_/Bearing_Stack__2_/F695_ZZ__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Motion__1_/Bearing_Stack__2_/M5_1mm_Spacer__2_",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Printed__1_/idler_housing_x2",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Printed__1_/[a]_idler_carrier_a_x2",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Printed__1_/[a]_idler_carrier_b_x2",
+        "Trident_Assembly/Gantry/Front_Idler_B/Front_Idler_A_Printed__1_/[a]_idler_front_x2"
+      ],
+      "bounds_m": [
+        [
+          -0.4003325209234353,
+          -0.18836604824229367,
+          -0.04508809724860147
+        ],
+        [
+          -0.3628331053989354,
+          -0.12751184411919866,
+          0.008286323951293322
+        ]
+      ],
+      "center_m": [
+        -0.38158281316118536,
+        -0.15793894618074616,
+        -0.018400886648654077
+      ]
+    },
+    "drive_a": {
+      "source_components": 22,
+      "source_paths": [
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/a_stepper_upper/A_Stepper_Upper__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/a_stepper_lower",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/Y_Endstop/D2F-L_Microswitch__1_/Switch_Body__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/Y_Endstop/D2F-L_Microswitch__1_/Lever__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/Y_Endstop/D2F-L_Microswitch__1_/Contacts__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/Y_Endstop/D2F-L_Microswitch__1_/Plunger__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/Y_Endstop/[a]_y_endstop_pod",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/circlip_x2__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/[a]_cover_logo_x2",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/[a]_cover_bearing_x2",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Printed/[a]_y_Bumper",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/Bearing_Stack/F695_ZZ_Mirror_",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/NEMA17_Motor_17HS19-2004S",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/GT2_20T_Pulley_6mm",
+        "Trident_Assembly/Gantry/B/A_Drives/A_Drive/A_Drive_Motion/F695_ZZ"
+      ],
+      "bounds_m": [
+        [
+          -0.10261536721751269,
+          -0.22330649573797343,
+          -0.40226676034071035
+        ],
+        [
+          0.01003828611662315,
+          -0.1389152523683927,
+          -0.34599927589694063
+        ]
+      ],
+      "center_m": [
+        -0.04628854055044477,
+        -0.18111087405318305,
+        -0.3741330181188255
+      ]
+    },
+    "drive_b": {
+      "source_components": 16,
+      "source_paths": [
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/NEMA17_Motor_17HS19-2004S__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/GT2_20T_Pulley_6mm__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/F695_ZZ__1___1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Motion/Bearing_Stack__1_/F695_ZZ__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Printed/b_stepper_lower",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Printed/b_stepper_upper/B_Stepper_Upper__1_",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Printed/circlip_x2",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Printed/[a]_cover_logo_x2",
+        "Trident_Assembly/Gantry/B/A_Drives/B_Drive/B_Drive_Printed/[a]_cover_bearing_x2"
+      ],
+      "bounds_m": [
+        [
+          -0.3998235131456148,
+          -0.22315172078632556,
+          -0.40102296354200484
+        ],
+        [
+          -0.2834733900606112,
+          -0.1388414427159186,
+          -0.3460000000000079
+        ]
+      ],
+      "center_m": [
+        -0.34164845160311297,
+        -0.1809965817511221,
+        -0.37351148177100635
+      ]
+    },
+    "toolhead": {
+      "source_components": 44,
+      "source_paths": [
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Probes/Omron_TL_Q5MC2/SOLID",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Probes/Panasonic_GX-H15A/SOLID",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/Stealthburner_Printed/[a]_stealthburner_main_body",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/LEDs/rgbw_led_pcb",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/LEDs/rgbw_led_pcb",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/LEDs/Logo_Led/LED_Diffuser",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/LEDs/Logo_Led/LED_Diffuser_Mask",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/LEDs/Logo_Led/LED_Carrier",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/LEDs/Logo_Led/rgbw_led_pcb",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/Stealthburner_Fans/5015_Fan",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/Stealthburner_Assembly/Stealthburner_Fans/4010_Axial_Fan",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/ADXL_Assembly_-_Generic/adxl_mount_generic_15_5_hole_c-c",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/ADXL_Assembly_-_Generic/adxl345_sensor_generic",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/SB_TOOLHEAD-Revo_Voron/Toolhead_Revo_Voron_Rear",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/SB_TOOLHEAD-Revo_Voron/Toolhead_Revo_Voron_Front",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/SB_TOOLHEAD-Revo_Voron/e3d_Revo_Voron_/Heatsink",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/SB_TOOLHEAD-Revo_Voron/e3d_Revo_Voron_/V7_wo_fanV7_Fitment_CAD_wo_fan_1_3",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/SB_TOOLHEAD-Revo_Voron/e3d_Revo_Voron_/Revo_Spring",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/SB_TOOLHEAD-Revo_Voron/PTFE_Tube_Revo_Voron_29_8",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/LDO-36STH20",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Motor_Plate",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Latch",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Main_Body",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/PCB_Spacer",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Guilder_A",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Guilder_B",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Shuttle",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Cable_Cover_For_PCB",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Cable_Cover",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Chain_Anchors/Chain_Anchor_3_Hole_V2_Trident",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/CW2_Printed/Chain_Anchors/Chain_Anchor_2_Hole_V2_Trident",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/Spring_Assembly/BMG_Spring",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Drive_Gear_Assembly/50T_Drive_Gear",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Drive_Gear_Assembly/Drive_Gear",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Drive_Gear_Assembly/MR825_Ballbearing_5x8x2",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Drive_Gear_Assembly/MR825_Ballbearing_5x8x2",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Idler_Gear_Assembly/3mmx20mm_Shaft",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Idler_Gear_Assembly/Idler_Gear",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Idler_Gear_Assembly/Needle_Bearings",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/BMG_Idler_Gear_Assembly/Needle_Bearings",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/CW2_Assembly/BMG_Extruder_Hardware/DIN_913_-_M3_x_2",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/X_Carriage/X_Carriage_Printed/probe_bracket",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/X_Carriage/X_Carriage_Printed/x_carriage_frame_right",
+        "Trident_Assembly/Gantry/X_Axis/Toolhead_Assembly/X_Carriage/X_Carriage_Printed/x_carriage_frame_left"
+      ],
+      "bounds_m": [
+        [
+          -0.23023608884761876,
+          -0.2105893290994865,
+          -0.20838786402629694
+        ],
+        [
+          -0.15893872307373244,
+          -0.07742237053868184,
+          -0.11660962649216322
+        ]
+      ],
+      "center_m": [
+        -0.19458740596067559,
+        -0.14400584981908415,
+        -0.16249874525923008
+      ]
+    },
+    "gantry": {
+      "source_components": 102,
+      "source_paths": [
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/MGN9H__1_/MGN9H_-_Carriage_end_cap__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/MGN9H__1_/MGN9H_-_Carriage_end__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/MGN9H__1_/MGN9H_-_Carriage_body__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/MGN9H__1_/MGN9H_-_Carriage_end__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/MGN9H__1_/MGN9H_-_Carriage_end_cap__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/Bearing_Stack__3_/F695_ZZ__3_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/Bearing_Stack__3_/F695_ZZ__3_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/GT2_20T_Idler_Gates__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Motion/GT2_20T_Idler__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Printed/xy_left_lower",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Printed/xy_left_upper",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Left/XY_Joint_Left_Printed/[a]_xy_left",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/xy_right_lower",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/xy_right_upper",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/[a]_xy_right",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/[a]_cable_bridge_3hole",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/[a]_cable_bridge_2hole",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/1X4_CONN_L_RA/SOLID__1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/PCB",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Switch_Body__2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Lever",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Contacts__2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Plunger__2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Switch_Body__2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Lever",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Contacts__2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/Endstop_Boards/D2F_XY_Endstop_PCB/D2F-L_Microswitch/Plunger__2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/[a]_xy_right_D2F",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Printed/[a]_d2f_cover",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/MGN9H__1___1_/MGN9H_-_Carriage_end_cap__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/MGN9H__1___1_/MGN9H_-_Carriage_end__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/MGN9H__1___1_/MGN9H_-_Carriage_body__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/MGN9H__1___1_/MGN9H_-_Carriage_end__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/MGN9H__1___1_/MGN9H_-_Carriage_end_cap__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/Bearing_Stack__1___1_/F695_ZZ__1___2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/Bearing_Stack__1___1_/F695_ZZ__1___2_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/GT2_20T_Idler_Gates__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/XY_Joint_-_Right/XY_Joint_Right_Motion/GT2_20T_Idler__1___1_",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_1",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_6",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_5",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_7",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_4",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_8",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_3",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_2",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/MGN12H/PRODUCT_NAME_9",
+        "Trident_Assembly/Gantry/X_Axis/MGN12_rail/SOLID",
+        "Trident_Assembly/Gantry/X_Axis/HFSB5-20-330",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Fixed_End",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Unfixed_End",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/X_Axis/10x11_Chain_X/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Unfixed_End",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Fixed_End",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/10x11_Chain_Link",
+        "Trident_Assembly/Gantry/10x11_Chain_Y/Chain_Wire_Anchor__For_3_hole_chains_only_",
+        "Trident_Assembly/Gantry/Gantry_Frame/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Gantry/Gantry_Frame/HFSB5-2020-240-D_Extrusion",
+        "Trident_Assembly/Gantry/Gantry_Frame/MGN9_-_300mm/SOLID",
+        "Trident_Assembly/Gantry/Gantry_Frame/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Gantry/Gantry_Frame/Foam_Tape__3mm,_optional_",
+        "Trident_Assembly/Gantry/Gantry_Frame/Foam_Tape__3mm,_optional_",
+        "Trident_Assembly/Gantry/Gantry_Frame/MGN9_-_300mm/SOLID"
+      ],
+      "bounds_m": [
+        [
+          -0.40300018453069986,
+          -0.20064786922679032,
+          -0.39600000000000096
+        ],
+        [
+          0.013000184530706208,
+          -0.0870000152400537,
+          -0.009858382406018433
+        ]
+      ],
+      "center_m": [
+        -0.19499999999999681,
+        -0.14382394223342201,
+        -0.2029291912030097
+      ]
+    },
+    "bed": {
+      "source_components": 11,
+      "source_paths": [
+        "Trident_Assembly/Z_Assembly/Bed_Components/Bed_heater",
+        "Trident_Assembly/Z_Assembly/Bed_Components/Flex_Sheet",
+        "Trident_Assembly/Z_Assembly/Bed_Components/Magnet_Sheet",
+        "Trident_Assembly/Z_Assembly/Bed_Components/250mm_MIC6_Bed/Thermal_Fuse",
+        "Trident_Assembly/Z_Assembly/Bed_Components/250mm_MIC6_Bed/Ring_Terminal",
+        "Trident_Assembly/Z_Assembly/Bed_Components/250mm_MIC6_Bed/SOLID",
+        "Trident_Assembly/Z_Assembly/Bed_Components/M4_Knurled_Nut",
+        "Trident_Assembly/Z_Assembly/Bed_Components/M4_Knurled_Nut",
+        "Trident_Assembly/Z_Assembly/Bed_Components/M4_Knurled_Nut",
+        "Trident_Assembly/Frame/Bed_Extrusions/HFSB5-2020-370-AH185-F_Extrusion",
+        "Trident_Assembly/Frame/Bed_Extrusions/HFSB5-2020-232-LTP-G_Extrusion"
+      ],
+      "bounds_m": [
+        [
+          -0.3800002998546604,
+          -0.2533499999999273,
+          -0.31270002504213606
+        ],
+        [
+          -0.010000299854659517,
+          -0.2167499999999132,
+          -0.01772307692307991
+        ]
+      ],
+      "center_m": [
+        -0.19500029985465994,
+        -0.23504999999992027,
+        -0.16521155098260798
+      ]
+    },
+    "frame": {
+      "source_components": 25,
+      "source_paths": [
+        "Trident_Assembly/Frame/Corner_Extrusions/HFSB5-2020-500-LCP-RCP-AV360_-_B_Extrusion",
+        "Trident_Assembly/Frame/Corner_Extrusions/HFSB5-2020-500-LCP-RCP-AV360_-_B_Extrusion",
+        "Trident_Assembly/Frame/Corner_Extrusions/HFSB5-2020-500-LCP-RCP-AV360_-_B_Extrusion",
+        "Trident_Assembly/Frame/Corner_Extrusions/HFSB5-2020-500-LCP-RCP-AV360_-_B_Extrusion",
+        "Trident_Assembly/Frame/Bottom_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Bottom_Extrusions/HFSB5-2020-370-AH185-TPW-C_Extrusion",
+        "Trident_Assembly/Frame/Bottom_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Bottom_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Top_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Top_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Top_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Top_Extrusions/HFSB5-2020-370-TPW-A_Extrusion",
+        "Trident_Assembly/Frame/Rear_Extrusion/HFSB5-2020-330-LTP-H_Extrusion",
+        "Trident_Assembly/Frame/Rear_VertExt_Upper_Brace/Rear_VertExt_Upper_Brace_Right",
+        "Trident_Assembly/Frame/Rear_VertExt_Upper_Brace/Rear_VertExt_Upper_Brace_Left",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor",
+        "Trident_Assembly/Frame/Cable_Frame_Anchors/Cable_Frame_Anchor"
+      ],
+      "bounds_m": [
+        [
+          -0.39999999999999797,
+          -0.5200000000000008,
+          -0.4000000000000002
+        ],
+        [
+          0.010000000000003525,
+          -0.019999999999998026,
+          0.010000000000000007
+        ]
+      ],
+      "center_m": [
+        -0.19499999999999723,
+        -0.2699999999999994,
+        -0.1950000000000001
+      ]
+    },
+    "hardware": {
+      "source_components": 178,
+      "source_paths": [
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Printed/z_carriage_left",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Printed/[a]_z_carriage_left",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Printed/z_bed_left",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage_Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__1__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__2__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__3__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__4__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__5__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__6__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__7__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/MGN_Carriage/MGN9H_-_Carriage__8__Mirror_",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Motion/Leadscrew_Nut_v1",
+        "Trident_Assembly/Z_Assembly/Z_Left/Z_Left_Hardware/GE5C__1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Printed/z_rear_insert_3hole",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Printed/z_rear_insert_2hole",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Printed/z_bed_rear",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Printed/z_carriage_rear",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Printed/[a]_z_carriage_rear",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Hardware/GE5C",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__9_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__1___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__2___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__3___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__4___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__5___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__6___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__7___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/MGN_Carriage_v1__1_/MGN9H_-_Carriage__8___1_",
+        "Trident_Assembly/Z_Assembly/Z_Rear/Z_Rear_Motion/Leadscrew_Nut_v1",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Hardware/GE5C_v1_v1",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__1_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__2_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__3_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__4_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__5_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__6_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__7_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/MGN_Carriage_v1/MGN9H_-_Carriage__8_",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Motion/Leadscrew_Nut_v1",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Printed/z_carriage_right",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Printed/[a]_z_carriage_right",
+        "Trident_Assembly/Z_Assembly/Z_Right/Z_Right_Printed/z_bed_right",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/Z_Endstop_Hardware/5x28_Shaft__Length_varies_by_setup_",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/Z_Endstop_Hardware/GT2_20T_6mm_Deflanged",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/Z_Endstop_Hardware/JST_3pin_Recepticle",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/Z_Endstop_Hardware/D2F_Microswitch/Plunger",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/Z_Endstop_Hardware/D2F_Microswitch/Contacts",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/Z_Endstop_Hardware/D2F_Microswitch/Switch_Body",
+        "Trident_Assembly/Z_Assembly/Z_Endstop_Assembly/z_endstop",
+        "Trident_Assembly/Z_Assembly/Z_Chain_Lower/Z_Chain_Lower_Printed/z_chain_lower_2hole",
+        "Trident_Assembly/Z_Assembly/Z_Chain_Lower/Z_Chain_Lower_Printed/z_chain_lower_3hole",
+        "Trident_Assembly/Z_Assembly/3x_Wago_221-412_Mount/Wago_221-412__Mount_Hardware/221-412",
+        "Trident_Assembly/Z_Assembly/3x_Wago_221-412_Mount/Wago_221-412__Mount_Hardware/221-412",
+        "Trident_Assembly/Z_Assembly/3x_Wago_221-412_Mount/Wago_221-412__Mount_Hardware/221-412",
+        "Trident_Assembly/Z_Assembly/3x_Wago_221-412_Mount/wago_221-412_mount",
+        "Trident_Assembly/Z_Assembly/[a]_z_rail_stop_x2",
+        "Trident_Assembly/Z_Assembly/Z_Rails/MGN9_-_300mm/SOLID",
+        "Trident_Assembly/Z_Assembly/Z_Rails/MGN9_-_300mm/SOLID",
+        "Trident_Assembly/Z_Assembly/Z_Rails/MGN9_-_300mm/SOLID",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Left/Z_Stepper_Left_Motion/NEMA17_Leadscrew_300mm/Leadscrew",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Left/Z_Stepper_Left_Motion/NEMA17_Leadscrew_300mm/Motor_Body",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Left/Z_Mount_Left_Printed/z_stepper_left",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Left/Z_Mount_Left_Printed/[a]_z_cover_left",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Right/Z_Stepper_Right_Motion/NEMA17_Leadscrew_300mm/Leadscrew",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Right/Z_Stepper_Right_Motion/NEMA17_Leadscrew_300mm/Motor_Body",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Right/Z_Stepper_Right_Printed/z_stepper_right",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Right/Z_Stepper_Right_Printed/[a]_z_cover_right",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Rear/Z_Motor_Rear_Motion/NEMA17_Leadscrew_300mm/Leadscrew",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Rear/Z_Motor_Rear_Motion/NEMA17_Leadscrew_300mm/Motor_Body",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Rear/Z_Stepper_Rear_Printed/[a]_z_cover_rear",
+        "Trident_Assembly/Z_Assembly/Z_Motors/Z_Stepper_Rear/Z_Stepper_Rear_Printed/z_stepper_rear",
+        "Trident_Assembly/Z_Assembly/[a]_z_rail_stop_x2",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Unfixed_End",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Fixed_End",
+        "Trident_Assembly/Z_Assembly/10x11_Chain_Z/10x11_Chain_Link",
+        "Trident_Assembly/Skirt/Corners/Corner_A/Corner_A_Hardware/Rubber_Foot",
+        "Trident_Assembly/Skirt/Corners/Corner_A/Corner_A_Printed/skirt_corner_a_x2",
+        "Trident_Assembly/Skirt/Corners/Corner_A/Corner_A_Printed/[a]_skirt_corner_a_x2",
+        "Trident_Assembly/Skirt/Corners/Corner_B/Corner_B_Hardware/Rubber_Foot",
+        "Trident_Assembly/Skirt/Corners/Corner_B/Corner_B_Printed/skirt_corner_b",
+        "Trident_Assembly/Skirt/Corners/Corner_B/Corner_B_Printed/[a]_skirt_corner_b",
+        "Trident_Assembly/Skirt/Corners/Corner_A/Corner_A_Hardware/Rubber_Foot",
+        "Trident_Assembly/Skirt/Corners/Corner_A/Corner_A_Printed/skirt_corner_a_x2",
+        "Trident_Assembly/Skirt/Corners/Corner_A/Corner_A_Printed/[a]_skirt_corner_a_x2",
+        "Trident_Assembly/Skirt/Corners/Corner_B/Corner_B_Hardware/Rubber_Foot",
+        "Trident_Assembly/Skirt/Corners/Corner_B/Corner_B_Printed/skirt_corner_b",
+        "Trident_Assembly/Skirt/Corners/Corner_B/Corner_B_Printed/[a]_skirt_corner_b",
+        "Trident_Assembly/Skirt/Front/Left/front_skirt_left_250",
+        "Trident_Assembly/Skirt/Front/Left/front_skirt_left_300",
+        "Trident_Assembly/Skirt/Front/Left/front_skirt_left_350",
+        "Trident_Assembly/Skirt/Front/Left/[a]_skirt_logo_x2",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/LCD_Case_Front/[a]_mini12864_case_front_insert",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/LCD_Case_Front/COMPOUND",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/LCD_Case_Rear",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/LCD_Case_Hinge",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/Mini12864_Screen/Kill_Button",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/Mini12864_Screen/Jog",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/Mini12864_Screen/COMPOUND",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/BTT_Knob_Light_Shield",
+        "Trident_Assembly/Skirt/Front/Mini12864_Assembly/SOLID",
+        "Trident_Assembly/Skirt/Front/Right/front_skirt_right_250",
+        "Trident_Assembly/Skirt/Front/Right/front_skirt_right_300",
+        "Trident_Assembly/Skirt/Front/Right/front_skirt_right_350",
+        "Trident_Assembly/Skirt/Front/Right/[a]_skirt_logo_x2",
+        "Trident_Assembly/Skirt/Rear/Center/rear_skirt_center_250",
+        "Trident_Assembly/Skirt/Rear/Center/rear_skirt_center_300",
+        "Trident_Assembly/Skirt/Rear/Center/rear_skirt_center_350",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Adam's_Tech/JR_Mains_Inlet/Switch",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Adam's_Tech/JR_Mains_Inlet/Fuse__1_",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Adam's_Tech/JR_Mains_Inlet/COMPOUND",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Adam's_Tech/rear_skirt_power_adamstech",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/rear_skirt_power_filtered",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/c-3-1609115-3-a",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8008:5430",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8009:2553",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8008:5938",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8008:6210",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8009:461",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8009:2706",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Power_Inlet/Filtered/Switch_DPST/8009:2302",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Keystone/rear_skirt_keystone",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Keystone/[a]_Keystone_Insert",
+        "Trident_Assembly/Skirt/Rear/Rear_Skirt_Keystone/[a]_Keystone_Insert__1_",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Skirt_B/side_skirt_b_250_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Skirt_B/side_skirt_b_300_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Skirt_B/side_skirt_b_350_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/[a]_fand_grill_b_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Fan_Grill_Retainer/[a]_fan_grill_retainer_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Fan_Support/side_fan_support_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/[a]_fan_grill_a_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Skirt_A/side_skirt_a_250_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Skirt_A/side_skirt_a_300_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Side_Skirt_A/side_skirt_a_350_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_No_Fan/Fan_Grill_Retainer/[a]_fan_grill_retainer_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Skirt_B/side_skirt_b_250_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Skirt_B/side_skirt_b_300_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Skirt_B/side_skirt_b_350_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Fan_Support/side_fan_support_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/[a]_fan_grill_a_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/[a]_fand_grill_b_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Skirt_A/side_skirt_a_250_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Skirt_A/side_skirt_a_300_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/Side_Skirt_A/side_skirt_a_350_x2",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/6020_Fan",
+        "Trident_Assembly/Skirt/Side_Skirt_Fan/6020_Fan",
+        "Trident_Assembly/Filament_Path/Spool_Holder/Spool_Holder_Printed/Spool_Holder_Base",
+        "Trident_Assembly/Filament_Path/Spool_Holder/Spool_Holder_Printed/Spool_Holder",
+        "Trident_Assembly/Filament_Path/Spool_Holder/Spool_Holder_Hardware/PTFE_Insert",
+        "Trident_Assembly/Filament_Path/PTFE_Holder/PTFE_Holder_Printed/PTFE_Holder",
+        "Trident_Assembly/Filament_Path/PTFE_Plate/PTFE_Plate_Printed/ExhaustCover",
+        "Trident_Assembly/Filament_Path/PTFE_Plate/PTFE_Plate_Printed/Filament_Inlet",
+        "Trident_Assembly/Filament_Path/PTFE_Plate/PTFE_Plate_Printed/Exhaust_Grill__1_",
+        "Trident_Assembly/Filament_Path/PTFE_Tube_A__4x3mm_",
+        "Trident_Assembly/Tools/z_alignment_tool_rear",
+        "Trident_Assembly/Tools/ptfe_jig_35mm",
+        "Trident_Assembly/Tools/_110mm_y_alignment_spacer_x2",
+        "Trident_Assembly/Tools/ba_pulley_align_tool"
+      ],
+      "bounds_m": [
+        [
+          -0.40287055956776313,
+          -0.6016160541133204,
+          -0.43533418874216534
+        ],
+        [
+          0.1044005528446475,
+          0.010639582807917334,
+          0.014199545787480873
+        ]
+      ],
+      "center_m": [
+        -0.14923500336155782,
+        -0.29548823565270155,
+        -0.21056732147734222
+      ]
+    }
+  },
+  "conversion": {
+    "linear_tolerance_mm": 0.35,
+    "angular_tolerance_radians": 0.35,
+    "triangle_budget": 220000,
+    "simplification_aggression": 5,
+    "materials": {
+      "1": [
+        0.7960784,
+        0.7960784,
+        0.7960784,
+        1.0
+      ],
+      "0": [
+        0.1960784,
+        0.1960784,
+        0.1960784,
+        1.0
+      ],
+      "2": [
+        0.9411765,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "tools": {
+      "build123d": "0.13.0",
+      "trimesh": "5.1.1",
+      "fast-simplification": "0.2.0"
+    }
+  },
+  "limitations": [
+    "Instructional display mesh, not fabrication CAD or a calibrated printer model",
+    "Panels, electronics and ordinary fasteners omitted; remaining geometry decimated",
+    "Source material colors clustered to three original CAD representatives",
+    "A/B names follow upstream CAD and may differ from a printer's labels"
+  ]
+}
